@@ -13,18 +13,6 @@ export default new Router({
     {
       path: '/',
       component: Home,
-      children: [
-        {
-          path: '/',
-          name: 'welcome',
-          component: ActionButtons
-        },
-        {
-          path: '/ask',
-          name: 'askQuestion',
-          component: AskQuestion
-        }
-      ]
     },
     {
       path: '/answers',

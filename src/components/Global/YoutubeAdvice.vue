@@ -47,7 +47,7 @@ export default {
   color: #ffffff;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  transition: all .3s ease;
+  transition: all .5s ease;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -4,12 +4,14 @@
       <textarea placeholder="What is your question?"
                 v-model="questionText"
                 required
-                :disabled="ask === 'done'"></textarea>
+                :disabled="asked"></textarea>
       <button type="submit"
               class="button highlight-button small-button"
-              :disabled="ask === 'done'">Submit</button>
+              :disabled="asked">Submit</button>
     </form>
-    <FollowUpQuestions v-if="ask === 'done'" :questionId='questionId'/>
+    <transition name="appearDown">
+      <FollowUpQuestions v-if="asked" :questionId='questionId' @additionalDetails="allInfoSent"/>
+    </transition>
   </div>
 </template>
 
@@ -18,11 +20,12 @@ import FollowUpQuestions from './FollowUpQuestions.vue'
 
 export default {
   name: 'askQuestion',
-  props: [ 'ask' ],
   data () {
     return {
       questionText: '',
       questionId: '',
+      asked: false,
+      additionalInfoSent: false
     }
   },
   components: {
@@ -32,7 +35,10 @@ export default {
     handleInitialSubmit (event) {
       this.$store.dispatch('sendNewQuestion', {'text': this.questionText} )
       .then( (response) => { this.questionId = response } )
-    this.$emit('questionAsked', 'done')
+      this.asked = true;
+  },
+  allInfoSent () {
+    this.$emit('allSent')
   }
 }
 }
@@ -58,5 +64,9 @@ export default {
 .question-form fieldset {
   margin: 0;
   border: 0;
+}
+
+.question-form {
+  margin-bottom: 50px;
 }
 </style>

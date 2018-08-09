@@ -4,6 +4,9 @@ import axios from 'axios'
 
 Vue.use(Vuex)
 
+// DEFINITION OF REST SERVER
+const rest_server = 'http://pobletelasserre.me:8000/api/'
+
 export default new Vuex.Store({
   strict: true,
   state: {
@@ -48,19 +51,19 @@ export default new Vuex.Store({
   actions: {
     fetchQandA ({commit}) {
       axios
-        .get('http://localhost:8000/api/public/?format=json')
+        .get(rest_server+'public/')
         .then(response => commit('setQandA', response.data))
     },
     searchQuery ({commit}, data) {
       axios
-        .get('http://localhost:8000/api/public/?format=json&search='+data)
+        .get(rest_server+'public/?search='+data)
         .then(response => commit('setQandA', response.data))
     },
     updateQuestionViews({commit}, question) {
       commit('increaseNumberOfViews', question)
       axios
       .patch(
-        'http://localhost:8000/api/private/questions/'+question.id+'/',
+        rest_server+'private/questions/'+question.id+'/',
         {'number_of_views' : question.number_of_views }, {
           auth: {
             username: 'guest',
@@ -71,7 +74,7 @@ export default new Vuex.Store({
       sendNewQuestion (context, data) {
         return new Promise( (resolve, reject) => {
           axios.post(
-            'http://localhost:8000/api/private/questions/', {
+            rest_server+'private/questions/', {
               'text': data.text,
               'additional_details': data.additional_details || '',
               'related_question': data.related_question,
@@ -88,7 +91,7 @@ export default new Vuex.Store({
       },
     submitAdditionalInformation (context, data) {
       axios.patch(
-        'http://localhost:8000/api/private/questions/'+data.questionId+'/',
+        rest_server+'private/questions/'+data.questionId+'/',
         { 'additional_details': data.additional_details },
         { auth: {
           username: 'guest',
