@@ -1,0 +1,64 @@
+{
+  "home": {
+    "title": "Hast du auch eine von &#187;diesen Fragen&#171;?",
+    "description": "<em>Diese Fragen</em> ist eine Frage-Antwort-Plattform, auf der du deine Fragen zu Themen rund um Pubertät, Beziehungen, Sexualität und Sex stellen kannst. Die Antworten kommen von Leuten, die Ähnliches erlebt haben."
+  },
+  "actionbuttons" : {
+    "ask_q" : "Stelle Eine Frage",
+    "see_ans": "Andere Fragen",
+    "meet_vols" : "Die Ambassadors",
+    "addit_det" : "Alle Infos wurden an das System geschickt. Vielen Dank! Wir melden uns so schnell wir möglich bei dir."
+  },
+  "answerdetails" : {
+    "more" : "Mehr...",
+    "cont_warn" : "Inhaltswarnung",
+    "explicit_content" : "Das folgende Bild/Video beinhaltet detaillierte Sprache oder Themen.",
+    "click_dismiss": "Klicke nur, wenn du dich sicher fühlst, das anzuschauen."
+  },
+  "youtubeadvice": {
+    "yt_title": "YouTube Button",
+    "yt_description": "Falls du Angst hast, dass dir jemand über die Schulter blickt, klicke einfach auf den YouTube Button und such nach deinem Lieblingslied. (Das kann ein bisschen von deinem Datenvolumen aufbrauchen.)"
+  },
+  "askquestion": {
+    "what_q": "Was ist deine Frage?",
+    "submit": "Abschicken"
+  },
+  "followupquestions": {
+    "thanks": "Danke für deine Frage.",
+    "answer_soon": "Wir beantworten diese innerhalb von einer Woche.",
+    "want_notification": "Willst du dann eine Benachrichtigung erhalten?",
+    "yes": "Ja",
+    "no": "Nein",
+    "email_notif": "Ich möchte eine E-Mail-Benachrichtigung erhalten.",
+    "enter_email": "Bitte gib deine E-Mail-Addresse ein",
+    "push_notif": "Ich möchte eine Benachrichtigung auf mein Handy erhalten. ",
+    "more_info": "Mehr Informationen zu deiner Frage helfen dabei, eine bessere Antwort zu verfassen. Doch ist dies nicht verpflichtend.",
+    "birthday": "Wie alt bist du?",
+    "additional_details": "Gibt es etwas, das du noch hinzufügen möchtest?",
+    "extra_question": "Falls du noch weitere Fragen hast, kannst du sie hier stellen. Wir antworten innerhalb von einer Woche.",
+    "done": "Fertig",
+    "privacy_reminder": "Unter {0} kannst du die Einstellungen zu deinen Benachrichtigungen immer ändern."
+  },
+  "answers": {
+    "title": "Antworten auf &#187;Diese Fragen&#171;.",
+    "explanation": "Viele Jugendliche haben ähnliche Fragen wie du. Hier kannst du sehen, welche Fragen von anderen Jugendlichen gestellt und von den Ambassadors beantwortet wurden.",
+    "explain_nsfw": "Manche Antworten enthalten auch Videos oder Bilder. Diese Inhalte können eventuell unangenehm für dich sein. Du selbst entscheidest, ob es sich für dich okay anfühlt, diese Inhalte zu sehen. Solche Videos/Bilder enthalten eine Inhaltswarnung. Durch Klicken auf das Video/Bild schaltest du die Warnung aus. Über die {0} kannst du die gesamte Funktion ausschalten.",
+    "search": "Suche",
+    "no_results": "Deine Suche ergab keinen Treffer. Versuche es mit einem anderen Suchbegriff."
+  },
+  "app": {
+    "privacy": "Privatsphäre",
+    "about": "Über <em>Diese Fragen</em>"
+  },
+  "about": {
+    "title": "Über <em>Diese Fragen</em>",
+    "description": "Während der Pubertät hat man viele Fragen zum eigenen Körper, zu Gefühlen oder Beziehungen. &#187; Diese Fragen &#171; ist eine peer-basierte Plattform, auf der alle Jugendliche aus verschiedenen Ländern und Kulturen ihre Fragen rund um Pubertät, Beziehung, Sexualität und Sex stellen können. Beantwortet werden diese Fragen von jungen Menschen die ebenfalls aus verschiedenen Kulturen kommen. Sie haben oft ähnliche Erfahrungen gemacht als die nach Deutschland kamen und mussten sich in Deutschland einfinden",
+    "about_project": "Das Projekt wird von einem jungen, internationalen Team geleitet (Deutschland, Chile, Indien, Niederlande). Alle Teammitglieder arbeiten seit Langem in der kulturell sensiblen Sexualaufklärung."
+  },
+  "ambassadors": {
+    "title": "Die Ambassadors",
+    "description": "Die Ambassadors sind ehrenamtliche, junge Leute, die deine Fragen beantworten. Dafür berufen sie sich nicht nur auf Fakten, sondern erzählen auch von sich und ihren eigenen Erfahrungen. Alle haben sich während ihrer Pubertät jemanden gewünscht, dem/der sie alle Fragen hätten stellen können. Diese/r Jemand wollen sie nun für dich sein!",
+    "nick": "Nickhil, 25 Jahre, Indien/Schweden",
+    "nick_bio": "Jeder Mensch hat das Recht auf angemessene Sexualerziehung. Ich bin in Indien aufgewachsen und meine Pubertät war voll von Mythen rund um Sex-Themen. Ich möchte, dass Jugendliche die richtigen Informationen zu ihren Fragen bekommen. Vor zwei Jahren kam ich nach Schweden brauchte eine ganze Weile, um die Zeichen der neuen Kultur zu lesen und meinen Platz hier zu finden."
+  }
+}

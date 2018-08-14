@@ -1,13 +1,13 @@
 <template>
   <div class="question-form container">
     <form @submit.prevent="handleInitialSubmit">
-      <textarea placeholder="What is your question?"
+      <textarea :placeholder="$t('askquestion.what_q')"
                 v-model="questionText"
                 required
                 :disabled="asked"></textarea>
       <button type="submit"
               class="button highlight-button small-button"
-              :disabled="asked">Submit</button>
+              :disabled="asked">{{$t('askquestion.submit')}}</button>
     </form>
     <transition name="appearDown">
       <FollowUpQuestions v-if="asked" :questionId='questionId' @additionalDetails="allInfoSent"/>
@@ -33,14 +33,14 @@ export default {
   },
   methods: {
     handleInitialSubmit (event) {
-      this.$store.dispatch('sendNewQuestion', {'text': this.questionText} )
-      .then( (response) => { this.questionId = response } )
-      this.asked = true;
-  },
-  allInfoSent () {
-    this.$emit('allSent')
+      this.$store.dispatch('sendNewQuestion', {'text': this.questionText})
+        .then((response) => { this.questionId = response })
+      this.asked = true
+    },
+    allInfoSent () {
+      this.$emit('allSent')
+    }
   }
-}
 }
 
 </script>

@@ -3,11 +3,11 @@
     <div class="modal-mask">
       <div class="modal-container">
         <div class="modal-header">
-          <h1>YouTube Button</h1>
+          <h1>{{$t('youtubeadvice.yt_title')}}</h1>
         </div>
 
         <div class="modal-body">
-          <p>If you're afraid someone is looking over your shoulder, just press the YouTube button and search for your favourite song (this may use some of your data).</p>
+          <p>{{$t('youtubeadvice.yt_description')}}</p>
         </div>
 
         <div class="modal-footer">

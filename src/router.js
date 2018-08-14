@@ -1,18 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import AskQuestion from './components/Home/AskQuestion.vue'
-import ActionButtons from './components/Home/ActionButtons.vue'
 import Answers from './views/Answers.vue'
-import Volunteers from './views/Volunteers.vue'
+import Ambassadors from './views/Ambassadors.vue'
+import About from './views/About.vue'
 
 Vue.use(Router)
 
 export default new Router({
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  },
+  mode: 'history',
   routes: [
     {
       path: '/',
-      component: Home,
+      name: 'home',
+      component: Home
     },
     {
       path: '/answers',
@@ -20,9 +28,19 @@ export default new Router({
       component: Answers
     },
     {
-      path: '/volunteers',
-      name: 'volunteers',
-      component: Volunteers
+      path: '/ambassadors',
+      name: 'ambassadors',
+      component: Ambassadors
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: About
+    },
+    {
+      path: '/privacy',
+      name: 'privacy',
+      component: Home
     }
   ]
 })

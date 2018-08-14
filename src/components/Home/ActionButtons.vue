@@ -3,7 +3,7 @@
 
     <button
       class="button highlight-button"
-      @click="asking = asking + 2">Ask A Question</button>
+      @click="asking = asking + 2">{{$t('actionbuttons.ask_q')}}</button>
 
     <transition name="appearDown">
       <AskQuestion v-if="asking > 0" @allSent="asking = -1 "/>
@@ -11,17 +11,17 @@
 
     <transition name="fade">
       <div class='sentNotification container' v-if="asking < 0">
-        <h2>Additional details sent to the server. Thank you! We'll get back in touch as soon as possible.</h2>
+        <h2>{{$t('actionbuttons.addit_det')}}</h2>
       </div>
     </transition>
 
     <button
       class="button"
-      @click='changeView("/answers")'>See Previous Answers</button>
+      @click='changeView("/answers")'>{{$t('actionbuttons.see_ans')}}</button>
 
     <button
       class="button"
-      @click='changeView("/volunteers")'>Meet The Volunteers</button>
+      @click='changeView("/ambassadors")'>{{$t('actionbuttons.meet_vols')}}</button>
   </div>
 </template>
 
@@ -49,7 +49,7 @@ export default {
 <style>
 
 .scale-in-ver-top {
-	animation: scale-in-ver-top 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: scale-in-ver-top 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @keyframes scale-in-ver-top {
