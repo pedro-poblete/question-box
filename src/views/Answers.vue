@@ -1,17 +1,19 @@
 <template>
   <section>
     <div class="container">
-      <h1>Questions + Answers Page Title</h1>
-      <p>Explanation?<br />
-        + clarify NSFW title handling (blur/default)</p>
-        <input id="searchAnswer" type="text" placeholder="search" v-model='searchQuery' @keyup.enter="doSearch">
+      <h1 v-html="$t('answers.title')"></h1>
+      <p>{{$t('answers.explanation')}}</p>
+      <i18n path="answers.explain_nsfw" tag="p">
+        <router-link :to="{ name: 'privacy'}">{{$t('app.privacy')}}</router-link>
+      </i18n>
+        <input id="searchAnswer" type="text" :placeholder="$t('answers.search')" v-model='searchQuery' @keyup.enter="doSearch">
     </div>
     <article class="question-list">
-      <div v-for="question in questions">
-        <AnswerDetails :question="question" :key="question.id" a/>
+      <div v-for="question in questions" :key="question.id">
+        <AnswerDetails :question="question" />
       </div>
       <div v-if="questions.length == 0" class="question-details">
-        <h2>No results available for your search. Please try a searching for something different.</h2>
+        <h2>{{$t('answers.no_results')}}</h2>
       </div>
     </article>
   </section>
@@ -42,7 +44,7 @@ export default {
     }
   },
   methods: {
-    doSearch() {
+    doSearch () {
       this.$store.dispatch('searchQuery', this.searchQuery)
     }
   }

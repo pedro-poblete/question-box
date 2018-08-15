@@ -7,7 +7,7 @@
       <p class="short-answer"> {{ question.answer.short_answer}}</p>
       <button class="more"
               @click="showLongAnswer = true"
-              v-if="!showLongAnswer">More...</button>
+              v-if="!showLongAnswer">{{$t('answerdetails.more')}}</button>
       <div class="long-answer"
            v-html="question.answer.long_answer"
            v-if="showLongAnswer"> </div>
@@ -18,13 +18,12 @@
              :class="{'nsfw-media' : question.answer.media[0].is_media_nsfw }"
              class="media-insert"></div>
           <div v-if="question.answer.media[0].is_media_nsfw" class="nsfw-filter" @click="question.answer.media[0].is_media_nsfw = false">
-            <p><strong>Content Warning</strong></p>
-            <p>The following content may include explicit language and/or deal with explicit topics.</p>
-            <p>Click anywhere to dismiss this warning</p>
+            <p><strong>{{$t('answerdetails.cont_warn')}}</strong></p>
+            <p>{{$t('answerdetails.explicit_content')}}</p>
+            <p>{{$t('answerdetails.click_dismiss')}}</p>
           </div>
         </div>
       </div>
-
   </div>
 </template>
 
@@ -42,7 +41,7 @@ export default {
     questionClicked () {
       this.showQuestion = !this.showQuestion
       if (this.showQuestion) {
-      this.$store.dispatch('updateQuestionViews', this.question)
+        this.$store.dispatch('updateQuestionViews', this.question)
       }
     }
   }

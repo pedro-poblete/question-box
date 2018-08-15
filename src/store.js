@@ -15,30 +15,34 @@ export default new Vuex.Store({
     pushNotification: false,
     showNSFW: false,
     modalShown: false,
+    preferred_locale: 'en',
     // ANSWERS
-    questionsAndAnswers: [],
+    questionsAndAnswers: []
   },
   mutations: {
-    setQandA(state, payload) {
+    setQandA (state, payload) {
       state.questionsAndAnswers = payload
     },
-    increaseNumberOfViews(state, question) {
+    increaseNumberOfViews (state, question) {
       question.number_of_views++
     },
-    changeModalStatus(state) {
+    changeModalStatus (state) {
       state.modalShown = !state.modalShown
     },
-    updateEmailNotification(state, payload) {
+    updateEmailNotification (state, payload) {
       state.emailNotification = payload
     },
-    updateEmail(state, payload) {
+    updateEmail (state, payload) {
       state.email = payload
     },
-    updatePushNotification(state, payload) {
+    updatePushNotification (state, payload) {
       state.pushNotification = payload
     },
     updateBirthday (state, payload) {
       state.birthday = payload
+    },
+    setPreferredLocale (state, payload) {
+      state.preferred_locale = payload
     }
   },
   // TODO: ADD ADDITIONAL DETAILS FOR QUESTION BLAAAAAA
@@ -48,52 +52,53 @@ export default new Vuex.Store({
   actions: {
     fetchQandA ({commit}) {
       axios
-        .get('http://localhost:8000/api/public/?format=json')
+        .get(process.env.VUE_APP_REST_API + 'public/')
         .then(response => commit('setQandA', response.data))
     },
     searchQuery ({commit}, data) {
       axios
-        .get('http://localhost:8000/api/public/?format=json&search='+data)
+        .get(process.env.VUE_APP_REST_API + 'public/?search=' + data)
         .then(response => commit('setQandA', response.data))
     },
-    updateQuestionViews({commit}, question) {
+    updateQuestionViews ({commit}, question) {
       commit('increaseNumberOfViews', question)
       axios
-      .patch(
-        'http://localhost:8000/api/private/questions/'+question.id+'/',
-        {'number_of_views' : question.number_of_views }, {
-          auth: {
-            username: 'guest',
-            password: 'guest12345'
-          }
-        })
-      },
-      sendNewQuestion (context, data) {
-        return new Promise( (resolve, reject) => {
-          axios.post(
-            'http://localhost:8000/api/private/questions/', {
-              'text': data.text,
-              'additional_details': data.additional_details || '',
-              'related_question': data.related_question,
-              'asked_by': 2,
-            }, {
-              auth: {
-                username: 'guest',
-                password: 'guest12345'
-              }
+        .patch(
+          process.env.VUE_APP_REST_API + 'private/questions/' + question.id + '/', {
+            'number_of_views': question.number_of_views }, {
+            auth: {
+              username: 'guest',
+              password: 'guest12345'
             }
-          ).then(
-            response => resolve(response.data.id))
-        })
-      },
+          }
+        )
+    },
+    sendNewQuestion (context, data) {
+      return new Promise((resolve, reject) => {
+        axios.post(
+          process.env.VUE_APP_REST_API + 'private/questions/', {
+            'text': data.text,
+            'additional_details': data.additional_details || '',
+            'related_question': data.related_question,
+            'asked_by': 2
+          }, {
+            auth: {
+              username: 'guest',
+              password: 'guest12345'
+            }
+          }
+        ).then(
+          response => resolve(response.data.id))
+      })
+    },
     submitAdditionalInformation (context, data) {
       axios.patch(
-        'http://localhost:8000/api/private/questions/'+data.questionId+'/',
+        process.env.VUE_APP_REST_API + 'private/questions/' + data.questionId + '/',
         { 'additional_details': data.additional_details },
         { auth: {
           username: 'guest',
           password: 'guest12345'
-          }
+        }
         }
       )
     }

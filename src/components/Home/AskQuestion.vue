@@ -1,15 +1,17 @@
 <template>
   <div class="question-form container">
     <form @submit.prevent="handleInitialSubmit">
-      <textarea placeholder="What is your question?"
+      <textarea :placeholder="$t('askquestion.what_q')"
                 v-model="questionText"
                 required
-                :disabled="ask === 'done'"></textarea>
+                :disabled="asked"></textarea>
       <button type="submit"
               class="button highlight-button small-button"
-              :disabled="ask === 'done'">Submit</button>
+              :disabled="asked">{{$t('askquestion.submit')}}</button>
     </form>
-    <FollowUpQuestions v-if="ask === 'done'" :questionId='questionId'/>
+    <transition name="appearDown">
+      <FollowUpQuestions v-if="asked" :questionId='questionId' @additionalDetails="allInfoSent"/>
+    </transition>
   </div>
 </template>
 
@@ -18,11 +20,12 @@ import FollowUpQuestions from './FollowUpQuestions.vue'
 
 export default {
   name: 'askQuestion',
-  props: [ 'ask' ],
   data () {
     return {
       questionText: '',
       questionId: '',
+      asked: false,
+      additionalInfoSent: false
     }
   },
   components: {
@@ -30,11 +33,14 @@ export default {
   },
   methods: {
     handleInitialSubmit (event) {
-      this.$store.dispatch('sendNewQuestion', {'text': this.questionText} )
-      .then( (response) => { this.questionId = response } )
-    this.$emit('questionAsked', 'done')
+      this.$store.dispatch('sendNewQuestion', {'text': this.questionText})
+        .then((response) => { this.questionId = response })
+      this.asked = true
+    },
+    allInfoSent () {
+      this.$emit('allSent')
+    }
   }
-}
 }
 
 </script>
@@ -58,5 +64,9 @@ export default {
 .question-form fieldset {
   margin: 0;
   border: 0;
+}
+
+.question-form {
+  margin-bottom: 50px;
 }
 </style>

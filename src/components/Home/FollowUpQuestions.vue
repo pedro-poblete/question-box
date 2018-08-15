@@ -1,21 +1,21 @@
 <template>
   <div class="question-form container follow-up">
-    <h2>Thank you for your question</h2>
-    <p class="small"> We will answer your question within a week.</p>
+    <transition name="appearDown">
+    <div v-if="!additionalInfoSent">
+    <h2>{{$t('followupquestions.thanks')}}</h2>
+    <p class="small">{{$t('followupquestions.answer_soon')}}</p>
     <form @submit.prevent="handleFinalSubmit">
       <fieldset id="notifications">
-        <legend>Do you want a notification when your question is answered?</legend>
+        <legend>{{$t('followupquestions.want_notification')}}</legend>
         <div class="yes-no-buttons">
           <input type="button"
-                 value="Yes"
+                 :value="$t('followupquestions.yes')"
                  class="button small-button highlight-button"
-                 @click="showNotificationOptions(true)"
-                 :disabled="additonalInfoSent">
+                 @click="showNotificationOptions(true)">
           <input type="button"
-                 value="No"
+                 :value="$t('followupquestions.no')"
                  class="button small-button"
-                 @click="showNotificationOptions(false)"
-                 :disabled="additonalInfoSent">
+                 @click="showNotificationOptions(false)">
          </div>
       </fieldset>
       <div class="checkbox-and-label">
@@ -24,47 +24,43 @@
                name="emailNotification"
                value="true"
                v-if="showNotification"
-               v-model="emailNotification"
-               :disabled="additonalInfoSent">
+               v-model="emailNotification">
         <label for="emailNotification"
-               v-if="showNotification">I want to receive an email notification</label>
+               v-if="showNotification">{{$t('followupquestions.email_notif')}}</label>
       </div>
       <input id="email"
              type="email"
-             placeholder="Please enter your email"
+             :placeholder="$t('followupquestions.enter_email')"
              v-if="emailNotification"
-             v-model="email"
-             :disabled="additonalInfoSent">
+             v-model="email">
       <div class="checkbox-and-label" v-if="showNotification">
         <input id="pushNotification"
                type="checkbox"
                name="pushNotification"
                value="true"
-               v-model="pushNotification"
-               :disabled="additonalInfoSent">
-        <label for="pushNotification">I want to receive a notification in my phone</label>
+               v-model="pushNotification">
+        <label for="pushNotification">{{$t('followupquestions.push_notif')}}</label>
       </div>
       <fieldset id="extraInformation">
-        <legend>More information to answer question better. Communicate not obligatory</legend>
-        <label for="birthday">Enter your date of birth. This will help us better answer your question</label>
+        <legend>{{$t('followupquestions.more_info')}}</legend>
+        <label for="birthday">{{$t('followupquestions.birthday')}}</label>
         <input id="birthday"
                type="date"
-               v-model="birthday"
-               :disabled="additonalInfoSent">
-        <textarea placeholder="Is there anything else you'll like to share with us that you may or may not want to be reflected in the answer directly?"
-                  v-model="additionalInformation"
-                  :disabled="additonalInfoSent"></textarea>
+               v-model="birthday">
+        <textarea :placeholder="$t('followupquestions.additional_details')"
+                  v-model="additionalInformation"></textarea>
         <textarea id="extraQ1"
-                  placeholder="If you have an additional question, you can ask it here. We will try to answer it as well in a week's time."
-                  v-model="additionalQuestion"
-                  :disabled="additonalInfoSent"></textarea>
+                  :placeholder="$t('followupquestions.extra_question')"
+                  v-model="additionalQuestion"></textarea>
       </fieldset>
       <button type="submit"
-              class="button highlight-button small-button"
-              :disabled="additonalInfoSent">Done</button>
+              class="button highlight-button small-button">{{$t('followupquestions.done')}}</button>
+      <i18n path="followupquestions.privacy_reminder" tag="p">
+        <router-link :to="{ name: 'privacy'}">{{$t('app.privacy')}}</router-link>
+      </i18n>
     </form>
-    <p>You can always <a href=''>visit the privacy page</a> to change your notification settings.</p>
-    <h2 v-if="additonalInfoSent">Additional details sent to the server. Thank you! We'll get back in touch as soon as possible.</h2>
+    </div>
+    </transition>
   </div>
 </template>
 
@@ -76,10 +72,9 @@ export default {
   data () {
     return {
       showNotification: false,
-      // ADDITIONAL QUESTION AND INFORMATION TO BE ADDED TO THE STATE LATER
       additionalQuestion: '',
       additionalInformation: '',
-      additonalInfoSent: false
+      additionalInfoSent: false
     }
   },
   computed: {
@@ -114,7 +109,7 @@ export default {
       set (state, payload) {
         this.$store.commit('updateBirthday', state)
       }
-    },
+    }
   },
   methods: {
     showNotificationOptions (choice) {
@@ -126,16 +121,17 @@ export default {
     },
     handleFinalSubmit () {
       this.$store.dispatch('submitAdditionalInformation', {
-                            'questionId': this.questionId,
-                            'additional_details': this.additionalInformation } )
+        'questionId': this.questionId,
+        'additional_details': this.additionalInformation })
       if (this.additionalQuestion) {
         this.$store.dispatch('sendNewQuestion', {
-                                                'text': this.additionalQuestion,
-                                                'additional_details': this.additionalInformation,
-                                                'related_question': this.questionId
-                                              })
+          'text': this.additionalQuestion,
+          'additional_details': this.additionalInformation,
+          'related_question': this.questionId
+        })
       }
-      this.additonalInfoSent = true
+      this.additionalInfoSent = true
+      this.$emit('additionalDetails')
     }
   }
 }

@@ -1,0 +1,64 @@
+{
+  "home": {
+    "title": "Do you also have one of &#34;those questions&#34;?",
+    "description": "<em>Those Questions</em> is a Q&A-platform to provide you with answers to your questions about growing up, identity, relationships, and sex from people you can relate to."
+  },
+  "actionbuttons" : {
+    "ask_q" : "Ask A Question",
+    "see_ans": "See Other Answers",
+    "meet_vols" : "Meet The Ambassadors",
+    "addit_det" : "Additional details sent to the server. Thank you! Well get back in touch as soon as possible."
+  },
+  "answerdetails" : {
+    "more" : "More...",
+    "cont_warn" : "Content Warning",
+    "explicit_content" : "The following content may include explicit language and/or deal with explicit topics.",
+    "click_dismiss": "Only click to dismiss this warning if you feel comfortable to watch it."
+  },
+  "youtubeadvice": {
+    "yt_title": "YouTube Button",
+    "yt_description": "If you're afraid someone is looking over your shoulder, just press the YouTube button and search for your favourite song (this may use some of your data)."
+  },
+  "askquestion": {
+    "what_q": "What is your question?",
+    "submit": "Submit"
+  },
+  "followupquestions": {
+    "thanks": "Thank you for your question.",
+    "answer_soon": "We will answer your question within a week.",
+    "want_notification": "Do you want a notification when your question is answered?",
+    "yes": "Yes",
+    "no": "No",
+    "email_notif": "I want to receive an email notification.",
+    "enter_email": "Please enter your email",
+    "push_notif": "I want to receive a notification in my phone.",
+    "more_info": "We would like to ask you some more information to answer your question better. However, this is not required.",
+    "birthday": "How old are you?",
+    "additional_details": "Is there anything else you'll like to share with us or that you want to add?",
+    "extra_question": "If you have an additional question, you can ask it here. We will try to answer it as well in a week's time.",
+    "done": "Done",
+    "privacy_reminder": "You can always visit the {0} page to change your notification settings."
+  },
+  "answers": {
+    "title": "Answers to &#34;those questions&#34;.",
+    "explanation": "Many adolescents have similar questions like you. Here you can read submitted questions by others and the answers already given by our ambassadors",
+    "explain_nsfw": "Some answers contain videos or pictures, and some of these could make you feel uncomfortable. We want you to decide for yourself and only watch those things when you are sure that you feel okay with it. We have marked any explicit content with a warning. You may dismiss that warning at any moment and/or completely disable it from your {0} section",
+    "search": "search",
+    "no_results": "There are no results available for your search. Please try searching for a different term."
+  },
+  "app": {
+    "privacy": "Privacy",
+    "about": "About <em>Those Questions</em>"
+  },
+  "about": {
+    "title": "About <em>Those Questions</em>",
+    "description": "During puberty, one has many questions about one's own body, feelings or relationships. <em>Those Questions</em> is a peer-based platform where all teenagers from different countries and cultures can ask their questions about puberty, relationships, sexuality and sex. These questions are answered by young people who also come from different cultures. They often had similar experiences when they came to Germany and had to settle in Germany.",
+    "about_project": "The project is led by a young international team (Germany, Chile, India, Netherlands). All team members have been working for a long time in culturally sensitive sex education."
+  },
+  "ambassadors": {
+    "title": "Meet the Ambassadors",
+    "description": "The ambassadors are committed, young people who want to provide answers and perspectives to your questions.",
+    "nick": "Nickhil, 25 years old, India/Sweden",
+    "nick_bio": "I believe everyone has the right for adequate sex-education. Growing up in India, my puberty was full of myths around sex-topics and I want adolescents to have the chance to get correct information about their concerns. I moved to Sweden two years ago and it took me a while to read the new culture's signs and find my own place in the country."
+  }
+}
