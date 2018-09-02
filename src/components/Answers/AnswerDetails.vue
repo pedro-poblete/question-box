@@ -105,7 +105,7 @@ export default {
 
 .short-answer {
   font-size: 1.2em;
-  line-height: 1.5
+  line-height: 1.5;
 }
 
 .more {

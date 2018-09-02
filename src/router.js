@@ -4,6 +4,8 @@ import Home from './views/Home.vue'
 import Answers from './views/Answers.vue'
 import Ambassadors from './views/Ambassadors.vue'
 import About from './views/About.vue'
+import Privacy from './views/Privacy.vue'
+
 
 Vue.use(Router)
 
@@ -20,6 +22,11 @@ export default new Router({
     {
       path: '/',
       name: 'home',
+      component: Home,
+    },
+    {
+      path: '/ask',
+      name: 'ask',
       component: Home
     },
     {
@@ -40,7 +47,7 @@ export default new Router({
     {
       path: '/privacy',
       name: 'privacy',
-      component: Home
+      component: Privacy
     }
   ]
 })

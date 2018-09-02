@@ -53,18 +53,18 @@ export default {
   align-items: center;
 }
 
-.modal-container::after {
+/* .modal-container::after {
   content: " ";
   position: fixed;
-  top: 0px;
-  right: 0px;
-  height: 125px;
-  width: 125px;
+  top: 80px;
+  right: 10px;
+  height: 70px;
+  width: 70px;
   text-align: center;
   background: white;
-  border-bottom-left-radius: 100%;
+  border-radius: 100%;
   font-size: 1.5rem;
-}
+} */
 
 .modal-header {
   width: 250px;

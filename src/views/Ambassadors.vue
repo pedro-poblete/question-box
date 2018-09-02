@@ -1,13 +1,21 @@
 <template>
   <section>
-    <div class="container">
+    <div class="container ambassadors-intro">
       <h1 v-html="$t('ambassadors.title')"></h1>
       <p v-html="$t('ambassadors.description')"></p>
     </div>
-    <div class="container ambassador">
-      <h3>{{$t('ambassadors.nick')}}</h3>
+    <div class="ambassador">
+      <div class="ambassador-header">
+        <h3>{{$t('ambassadors.nick')}}<span class="age">, 25</span></h3>
+        <h4>{{$t('ambassadors.nick_info')}}</h4>
+      </div>
       <img src="../assets/nick.jpg" class="fullwidth-image" alt="Nickhil Picture">
-      <p>{{$t('ambassadors.nick_bio')}}</p>
+      <div class="ambassador-bio">
+        <p>{{$t('ambassadors.nick_bio')}}</p>
+      </div>
+    </div>
+    <div class="container">
+      <p v-html="$t('ambassadors.cta')" class="cta"></p>
     </div>
   </section>
 </template>
@@ -20,18 +28,63 @@ export default {
 </script>
 
 <style>
+
+.ambassadors-intro p {
+  line-height: 1.5;
+}
+
 .ambassador {
-  margin-top:50px;
+  margin: 75px auto 0 auto;
+  position: relative;
+  max-width: 450px;
 }
 
-.ambassador h3 {
-  font-size: 1em;
-  color: #0090F2;
+.ambassador-header {
+  width: auto;
+  padding: 15px;
+  position: absolute;
+  top:-25px;
+  left: 25px;
+  float: left;
+  background-color: #ffffff;
+  z-index: 10;
 }
 
-.ambassador p {
+.age {
+  font-size: 0.6em;
+}
+
+.ambassador-header h3 {
+  font-size: 1.5em;
+  margin: 0;
+  font-weight: 400;
+}
+
+.ambassador-header h4 {
+  margin: 0;
+  line-height: 2.5em;
+  font-size: 0.8em;
+  font-weight: 400;
+}
+
+.ambassador-bio {
+  margin: 0 auto;
+  width:300px;
+  padding: 15px;
+  top: -50px;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.ambassador-bio p {
   font-style: italic;
   line-height: 1.7;
+  margin-top: 0;
+}
+
+.cta {
+  font-size: 1.1em;
+  line-height: 1.5;
 }
 
 </style>

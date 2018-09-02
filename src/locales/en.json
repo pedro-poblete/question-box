@@ -1,6 +1,6 @@
 {
-  "home": {
-    "title": "Do you also have one of &#34;those questions&#34;?",
+  "home" : {
+    "title": "Do you also have one of \"those questions\"?",
     "description": "<em>Those Questions</em> is a Q&A-platform to provide you with answers to your questions about growing up, identity, relationships, and sex from people you can relate to."
   },
   "actionbuttons" : {
@@ -48,17 +48,41 @@
   },
   "app": {
     "privacy": "Privacy",
-    "about": "About <em>Those Questions</em>"
+    "about": "About <em>Those Questions</em>",
+    "app_name": "Those Questions",
+    "home": "Home",
+    "ask": "Ask",
+    "answers": "Answers"
   },
   "about": {
     "title": "About <em>Those Questions</em>",
-    "description": "During puberty, one has many questions about one's own body, feelings or relationships. <em>Those Questions</em> is a peer-based platform where all teenagers from different countries and cultures can ask their questions about puberty, relationships, sexuality and sex. These questions are answered by young people who also come from different cultures. They often had similar experiences when they came to Germany and had to settle in Germany.",
-    "about_project": "The project is led by a young international team (Germany, Chile, India, Netherlands). All team members have been working for a long time in culturally sensitive sex education."
+    "description": "Puberty often comes with questions about one’s own body, feelings or relationships. {0} is a platform where teenagers from all countries and cultures can submit questions about puberty, relationships, sexuality and sex. The questions are then answered by {1} who have often had similar experiences when they had to settle in Germany.",
+    "young_people": "young people from different cultures",
+    "description_old": "During puberty, one has many questions about one's own body, feelings or relationships. <em>Those Questions</em> is a peer-based platform where all teenagers from different countries and cultures can ask their questions about puberty, relationships, sexuality and sex. These questions are answered by young people who also come from different cultures. They often had similar experiences when they came to Germany and had to settle in Germany.",
+    "team_title": "The Team",
+    "about_project_old": "The project is led by a young international team (Germany, Chile, India, Netherlands). All team members have been working for a long time in culturally sensitive sex education.",
+    "about_project": "<p>The project is led by a young international team who have all been working in culturally sensitive education for a long time and includes people coming from Germany, Chile, India, and Belgium.</p> <p>Funding comes from the <a href='https://prototypefund.de' target='_blank'>Prototype Fund</a>, which connects iterative software development to government funding.</p>"
   },
   "ambassadors": {
     "title": "Meet the Ambassadors",
     "description": "The ambassadors are committed, young people who want to provide answers and perspectives to your questions.",
-    "nick": "Nickhil, 25 years old, India/Sweden",
-    "nick_bio": "I believe everyone has the right for adequate sex-education. Growing up in India, my puberty was full of myths around sex-topics and I want adolescents to have the chance to get correct information about their concerns. I moved to Sweden two years ago and it took me a while to read the new culture's signs and find my own place in the country."
+    "nick": "Nickhil",
+    "nick_info": "India/Sweden",
+    "nick_bio": "\"I believe everyone has the right for adequate sex-education. Growing up in India, my puberty was full of myths around sex-topics and I want adolescents to have the chance to get correct information about their concerns. I moved to Sweden two years ago and it took me a while to read the new culture's signs and find my own place in the country.\"",
+    "cta": "Do you think you will like to be an ambassador and help other young people in the adventure of growing up? Please send us an email at <a href='mailto:contact@thosequestions.de'>contact@thosequestions.de</a> and we'll get in touch with you to see how can you support the project."
+  },
+  "privacy": {
+    "title": "Privacy",
+    "subheader": "You are in control of your personal data.",
+    "description": "<p>We ask you to opt-in before we use any of your personal data for this website. If you do not opt-in, we will not collect, store, or use any personal data in our server.</p> <p>We differentiate between two types of data: the things you send to our server, and the things that are kept in your local storage and are not processed by us, but remain in your own device.</p> <p>If you have any questions or problems, you can always reach to us in <a href='mailto:contact@thosequestions.de'>contact@thosequestions.de</a>.</p>",
+    "incognito_title": "Use this website secretly",
+    "incognito_instructions": "<p>If you want to browse this site (and the web) without your browser remembering your activity, you can do so by accessing the Incognito or Private mode.</p> <b>TODO: ADD MORE OF THIS</b>",
+    "notifications_title": "Notifications",
+    "notifications_explanation": "<p>Whenever you send a question and/or any additional details, that information is stored in our servers. If you include your email address for notifications, it will be stored and kept link with your question so we can send you a notification. This processing is, however, done automatically, and none of our Ambassadors or the rest of the team is able to see your email.</p> <p>When you subscribe to receive a phone notification, a subscription event is generated in our server and in your device, so whenever the question is answered, your device will automatically let you know. We do not keep any personal data about your phone other than the subscription event. It is impossible for us to track down your location, phone number, or any other personal data.</p>",
+    "notifications_email": "I want to receive an email notification whenever the questions I ask are answered.",
+    "notifications_push": "I want to receive a notification in my device whenever the questions I ask are answered.",
+    "offline_data_title": "Offline Storage",
+    "offline_data_explanation": "<p>Most information is actually stored and processed locally in your own device, without us having access to it unless you share it by sending a question. We keep track locally of your preferences about explicit content, language, and notifications.</p> <p>A local copy of the website is stored in your device so you can use it while being offline. This local copy allows you to read any answered question while being offline, but it won't save any associated media (i.e. YouTube videos and/or images) in your phone.</p> <p>If, for whatever reason, you want to delete this, you can do so here. Any information won't be re-downloaded until you navigate and/or decide to share it again.</p>",
+    "delete_button": "Delete local information"
   }
 }

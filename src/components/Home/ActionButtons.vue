@@ -3,14 +3,14 @@
 
     <button
       class="button highlight-button"
-      @click="asking = asking + 2">{{$t('actionbuttons.ask_q')}}</button>
+      @click="asking = asking * -1">{{$t('actionbuttons.ask_q')}}</button>
 
     <transition name="appearDown">
-      <AskQuestion v-if="asking > 0" @allSent="asking = -1 "/>
+      <AskQuestion v-if="asking > -1" @allSent="asking = -2 "/>
     </transition>
 
     <transition name="fade">
-      <div class='sentNotification container' v-if="asking < 0">
+      <div class='sentNotification container' v-if="asking < -1">
         <h2>{{$t('actionbuttons.addit_det')}}</h2>
       </div>
     </transition>
@@ -35,12 +35,28 @@ export default {
   },
   data () {
     return {
-      asking: 0
+      asking: -1
     }
+  },
+  mounted() {
+    this.checkRoute()
   },
   methods: {
     changeView (navigationPath) {
       this.$router.push({path: navigationPath})
+    },
+    checkRoute() {
+      if (this.$route.name == 'home') {
+        this.asking = -1;
+      }
+      if (this.$route.name == 'ask') {
+        this.asking = 1;
+      }
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      this.checkRoute()
     }
   }
 }

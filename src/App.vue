@@ -1,8 +1,13 @@
 <template>
   <div id="app">
     <YoutubeAdvice v-if="showModal" @close="showModal = false"> </YoutubeAdvice>
+    <transition name="appearDown">
+      <Tabs v-if="showNavBar"></Tabs>
+    </transition>
     <header id="top-bar">
-        <img src="./assets/exit.jpg" @click="modalManager()" class="exit-button" :class="{'animateExitButton' : !modalShown}">
+      <div class="exit-button" :class="{'animateExitButton' : !modalShown, 'pushButtonUp' : !showNavBar }">
+        <img src="./assets/Youtube-icon.png" @click="modalManager()">
+      </div>
     </header>
     <router-view/>
     <footer>
@@ -21,7 +26,7 @@
               <path d="M239.7 260.2c0.5 0 1 0 1.6 0 0.2 0 0.4 0 0.6 0 0.3 0 0.7 0 1 0 29.3-0.5 53-10.8 70.5-30.5 38.5-43.4 32.1-117.8 31.4-124.9 -2.5-53.3-27.7-78.8-48.5-90.7C280.8 5.2 262.7 0.4 242.5 0h-0.7c-0.1 0-0.3 0-0.4 0h-0.6c-11.1 0-32.9 1.8-53.8 13.7 -21 11.9-46.6 37.4-49.1 91.1 -0.7 7.1-7.1 81.5 31.4 124.9C186.7 249.4 210.4 259.7 239.7 260.2zM164.6 107.3c0-0.3 0.1-0.6 0.1-0.8 3.3-71.7 54.2-79.4 76-79.4h0.4c0.2 0 0.5 0 0.8 0 27 0.6 72.9 11.6 76 79.4 0 0.3 0 0.6 0.1 0.8 0.1 0.7 7.1 68.7-24.7 104.5 -12.6 14.2-29.4 21.2-51.5 21.4 -0.2 0-0.3 0-0.5 0l0 0c-0.2 0-0.3 0-0.5 0 -22-0.2-38.9-7.2-51.4-21.4C157.7 176.2 164.5 107.9 164.6 107.3z"/>
               <path d="M446.8 383.6c0-0.1 0-0.2 0-0.3 0-0.8-0.1-1.6-0.1-2.5 -0.6-19.8-1.9-66.1-45.3-80.9 -0.3-0.1-0.7-0.2-1-0.3 -45.1-11.5-82.6-37.5-83-37.8 -6.1-4.3-14.5-2.8-18.8 3.3 -4.3 6.1-2.8 14.5 3.3 18.8 1.7 1.2 41.5 28.9 91.3 41.7 23.3 8.3 25.9 33.2 26.6 56 0 0.9 0 1.7 0.1 2.5 0.1 9-0.5 22.9-2.1 30.9 -16.2 9.2-79.7 41-176.3 41 -96.2 0-160.1-31.9-176.4-41.1 -1.6-8-2.3-21.9-2.1-30.9 0-0.8 0.1-1.6 0.1-2.5 0.7-22.8 3.3-47.7 26.6-56 49.8-12.8 89.6-40.6 91.3-41.7 6.1-4.3 7.6-12.7 3.3-18.8 -4.3-6.1-12.7-7.6-18.8-3.3 -0.4 0.3-37.7 26.3-83 37.8 -0.4 0.1-0.7 0.2-1 0.3 -43.4 14.9-44.7 61.2-45.3 80.9 0 0.9 0 1.7-0.1 2.5 0 0.1 0 0.2 0 0.3 -0.1 5.2-0.2 31.9 5.1 45.3 1 2.6 2.8 4.8 5.2 6.3 3 2 74.9 47.8 195.2 47.8s192.2-45.9 195.2-47.8c2.3-1.5 4.2-3.7 5.2-6.3C447 415.5 446.9 388.8 446.8 383.6z"/>
             </svg>
-            <router-link tag="a" :to="{ name : 'home' }">{{$t('app.privacy')}}</router-link>
+            <router-link tag="a" :to="{ name : 'privacy' }">{{$t('app.privacy')}}</router-link>
           </li>
           <li>
             <svg class="icon-footer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -37,18 +42,32 @@
 
 <script>
 import YoutubeAdvice from './components/Global/YoutubeAdvice.vue'
+import Tabs from './components/Global/Tabs.vue'
 
 export default {
   name: 'MainApp',
   components: {
-    'YoutubeAdvice': YoutubeAdvice
+    'YoutubeAdvice': YoutubeAdvice,
+    'Tabs': Tabs,
   },
   beforeCreate () {
     this.$i18n.locale = this.$store.state.preferred_locale
   },
+  created () {
+    // THIS IS NOT NECESSARILY WORKING AS INTENDED RIGHT NOW... IF THE NAVBAR IS NOT SHOWN, IT WILL NOT APPEAR WHEN YOU GO TO A DIFFERENT PAGE...
+    window.addEventListener('scroll', this.handleScroll)
+    if (this.$route.name === 'home' || this.$route.name === 'ask') {
+      this.showNavBar = false
+    }
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
   data () {
     return {
-      showModal: false
+      showModal: false,
+      scrollTop: 0,
+      showNavBar: true,
     }
   },
   computed: {
@@ -66,15 +85,23 @@ export default {
         this.$store.commit('changeModalStatus')
         this.showModal = true
       } else {
-        // TODO: MAYBE ADD A TRANSITION ELEMENT THAT MAY HIDE EVERYTHING WHILE YOUTUBE LOADS?
         window.location.href = 'https://www.youtube.com'
       }
     },
     setLang (lang) {
       this.$i18n.locale = lang
       this.$store.commit('setPreferredLocale', lang)
+    },
+    handleScroll () {
+      if (window.scrollY < this.scrollTop) {
+        this.showNavBar = true
+      }
+      if (window.scrollY > this.scrollTop && window.scrollY > 50) {
+        this.showNavBar = false
+      }
+      this.scrollTop = window.scrollY
     }
-  }
+  },
 }
 </script>
 
@@ -95,7 +122,7 @@ export default {
     display:flex;
     flex-direction: row-reverse;
     width:100%;
-    margin-top:15px;
+    margin-top:75px;
     margin-bottom:5px;
   }
 
@@ -103,9 +130,34 @@ export default {
     width: 30px;
     height: 30px;
     padding: 10px;
+    margin-top: 15px;
     right: 10px;
     z-index: 9999;
     position: fixed;
+    transition: margin 0.5s;
+  }
+
+  .exit-button img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .pushButtonUp {
+    margin-top: -50px;
+  }
+
+  .exit-button::after {
+    content: " ";
+    z-index: -1000;
+    position: fixed;
+    margin-top: -10px;
+    margin-left: -40px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    background: white;
+    border-radius: 100%;
+    font-size: 1.5rem;
   }
 
   .animateExitButton {
@@ -193,7 +245,7 @@ export default {
 
   h1 {
     margin-bottom: 1.2em;
-    font-size: 1.8em;
+    font-size: 1.5em;
     font-weight: 400;
   }
 
