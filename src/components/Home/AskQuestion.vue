@@ -20,6 +20,15 @@ import FollowUpQuestions from './FollowUpQuestions.vue'
 
 export default {
   name: 'askQuestion',
+  computed: {
+    questionTextLocated () {
+      if (this.$i18n.locale === 'de') {
+        return { "de": this.questionText }
+      } else {
+        return { "en": this.questionText }
+      }
+    }
+  },
   data () {
     return {
       questionText: '',
@@ -33,7 +42,7 @@ export default {
   },
   methods: {
     handleInitialSubmit (event) {
-      this.$store.dispatch('sendNewQuestion', {'text': this.questionText})
+      this.$store.dispatch('sendNewQuestion', {'text': this.questionTextLocated})
         .then((response) => { this.questionId = response })
       this.asked = true
     },

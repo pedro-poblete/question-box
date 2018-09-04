@@ -6,7 +6,7 @@
       <i18n path="answers.explain_nsfw" tag="p">
         <router-link :to="{ name: 'privacy'}">{{$t('app.privacy')}}</router-link>
       </i18n>
-        <input id="searchAnswer" type="text" :placeholder="$t('answers.search')" v-model='searchQuery' @keyup.enter="doSearch">
+        <input id="searchAnswer" type="text" :placeholder="$t('answers.search')" v-model='searchQuery'>
     </div>
     <article class="question-list">
       <div v-for="question in questions" :key="question.id">
@@ -32,22 +32,37 @@ export default {
   },
   data () {
     return {
-      searchQuery: ''
+      searchQuery: '',
     }
   },
   computed: {
     questions () {
-      return this.$store.state.questionsAndAnswers
+      return this.$store.state.questionsAndAnswers.filter(question => {
+        let searchSpace = JSON.stringify(question).toLowerCase()
+        let allKeywords = true
+        // OR SEARCH
+        // let searchSpace = JSON.stringify(question).toLowerCase()
+        // for (var keyword of this.searchQuery.toLowerCase().split(" ")) {
+        //   if (searchSpace.includes( keyword ) ) {
+        //     return true
+        //   }
+        for (var keyword of this.searchQuery.toLowerCase().split(" ")) {
+          if (!searchSpace.includes( keyword ) ) {
+            allKeywords = false
+          }
+        }
+        return allKeywords
+      })
     },
     showNSFW () {
       return this.$store.state.showNSFW
+    },
+    filteredList () {
+      return this.questions.filter(question =>
+        JSON.stringify(question).toLowerCase().includes(this.searchQuery.toLowerCase())
+      )
     }
   },
-  methods: {
-    doSearch () {
-      this.$store.dispatch('searchQuery', this.searchQuery)
-    }
-  }
 }
 </script>
 

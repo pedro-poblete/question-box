@@ -31,7 +31,7 @@
       <input id="email"
              type="email"
              :placeholder="$t('followupquestions.enter_email')"
-             v-if="emailNotification"
+             v-if="emailNotification && showNotification"
              v-model="email">
       <div class="checkbox-and-label" v-if="showNotification">
         <input id="pushNotification"
@@ -43,10 +43,13 @@
       </div>
       <fieldset id="extraInformation">
         <legend>{{$t('followupquestions.more_info')}}</legend>
-        <label for="birthday">{{$t('followupquestions.birthday')}}</label>
-        <input id="birthday"
-               type="date"
-               v-model="birthday">
+        <label for="age">{{$t('followupquestions.age')}}</label>
+        <input id="age"
+               type="number"
+               min="5"
+               max="150"
+               steps="1"
+               v-model="age">
         <textarea :placeholder="$t('followupquestions.additional_details')"
                   v-model="additionalInformation"></textarea>
         <textarea id="extraQ1"
@@ -78,6 +81,13 @@ export default {
     }
   },
   computed: {
+    questionTextLocated () {
+      if (this.$i18n.locale === 'de') {
+        return { "de": this.additionalQuestion }
+      } else {
+        return { "en": this.additionalQuestion }
+      }
+    },
     emailNotification: {
       get () {
         return this.$store.state.emailNotification
@@ -102,12 +112,12 @@ export default {
         this.$store.commit('updatePushNotification', state)
       }
     },
-    birthday: {
+    age: {
       get () {
-        return this.$store.state.birthday
+        return this.$store.state.age
       },
       set (state, payload) {
-        this.$store.commit('updateBirthday', state)
+        this.$store.commit('updateAge', state)
       }
     }
   },
@@ -122,12 +132,15 @@ export default {
     handleFinalSubmit () {
       this.$store.dispatch('submitAdditionalInformation', {
         'questionId': this.questionId,
-        'additional_details': this.additionalInformation })
+        'additional_details': this.additionalInformation,
+        'asker_age': this.age
+      })
       if (this.additionalQuestion) {
         this.$store.dispatch('sendNewQuestion', {
-          'text': this.additionalQuestion,
+          'text': this.questionTextLocated,
           'additional_details': this.additionalInformation,
-          'related_question': this.questionId
+          'related_question': this.questionId,
+          'asker_age': this.age
         })
       }
       this.additionalInfoSent = true
@@ -183,9 +196,9 @@ export default {
   font-size: 1.3em;
 }
 
-#extraInformation input[type=date] {
-  margin-top: 10px;
-  display:block;
+#extraInformation input[type=number] {
+  margin-left: 10px;
+  display:inline-block;
   font-family: 'Noto Sans', sans-serif;
 }
 

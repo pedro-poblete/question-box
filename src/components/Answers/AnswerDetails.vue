@@ -1,23 +1,24 @@
 <template>
   <div class="question-details"
        :class="{'colored-border' : showQuestion }">
-    <h2 @click="questionClicked()">{{ question.text }}</h2>
+    <h2 @click="questionClicked()">{{ text }}</h2>
     <div class="answer-body"
          v-if="showQuestion">
-      <p class="short-answer"> {{ question.answer.short_answer}}</p>
+      <p class="short-answer"> {{ short_answer}}</p>
       <button class="more"
               @click="showLongAnswer = true"
               v-if="!showLongAnswer">{{$t('answerdetails.more')}}</button>
       <div class="long-answer"
-           v-html="question.answer.long_answer"
+           v-html="long_answer"
            v-if="showLongAnswer"> </div>
       <div class="media"
-           v-if="question.answer.media && showLongAnswer">
-        <div v-html="question.answer.media[0].media_html_embed"
+           v-for="media in question.answer.media"
+           v-if="showLongAnswer">
+        <div v-html="media.media_html_embed"
              v-if="showLongAnswer"
-             :class="{'nsfw-media' : question.answer.media[0].is_media_nsfw }"
+             :class="{'nsfw-media' : media.is_media_nsfw }"
              class="media-insert"></div>
-          <div v-if="question.answer.media[0].is_media_nsfw" class="nsfw-filter" @click="question.answer.media[0].is_media_nsfw = false">
+          <div v-if="media.is_media_nsfw" class="nsfw-filter" @click="media.is_media_nsfw = false">
             <p><strong>{{$t('answerdetails.cont_warn')}}</strong></p>
             <p>{{$t('answerdetails.explicit_content')}}</p>
             <p>{{$t('answerdetails.click_dismiss')}}</p>
@@ -28,6 +29,8 @@
 </template>
 
 <script>
+import marked from 'marked'
+
 export default {
   name: 'AnswersDetails',
   props: ['question'],
@@ -36,6 +39,32 @@ export default {
       showQuestion: false,
       showLongAnswer: false
     }
+  },
+  computed: {
+    text () {
+      if (this.$i18n.locale === 'de') {
+        return this.question.text.de
+      }
+      else {
+        return this.question.text.en
+      }
+    },
+    short_answer () {
+      if (this.$i18n.locale === 'de') {
+        return this.question.answer.short_answer.de
+      }
+      else {
+        return this.question.answer.short_answer.en
+      }
+    },
+    long_answer () {
+      if (this.$i18n.locale === 'de') {
+        return marked(this.question.answer.long_answer.de)
+      }
+      else {
+        return marked(this.question.answer.long_answer.en)
+      }
+    },
   },
   methods: {
     questionClicked () {
