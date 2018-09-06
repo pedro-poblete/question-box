@@ -33,7 +33,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 150%;
   background-color: rgba(255, 255, 255, .5);
   display: table;
   transition: opacity .3s ease;
@@ -42,7 +42,7 @@ export default {
 .modal-container {
   width: 100%;
   box-sizing:border-box;
-  padding: 20px 30px;
+  padding: 10px 0;
   background-color: #eb361d;
   color: #ffffff;
   border-bottom-left-radius: 20px;
@@ -73,13 +73,16 @@ export default {
 }
 
 .modal-header h1 {
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 28px;
   line-height: 1;
   margin: 0;
+  text-transform: none;
+  letter-spacing: 0.5px;
 }
 
 .modal-body {
-  margin-top: 25px;
+  margin-top: 5px;
   margin-right: 25px;
   max-width: 250px;
 }
@@ -94,6 +97,9 @@ export default {
   border: 0;
 }
 
+.chevron {
+  padding: 10px;
+}
 .chevron::before {
   border-style: solid;
   border-width: 0.25em 0.25em 0 0;

@@ -1,6 +1,6 @@
 {
   "home" : {
-    "title": "Do you also have one of \"those questions\"?",
+    "title": "Do you also have one of “those questions”?",
     "description": "<em>Those Questions</em> is a Q&A-platform to provide you with answers to your questions about growing up, identity, relationships, and sex from people you can relate to."
   },
   "actionbuttons" : {
@@ -17,8 +17,8 @@
     "click_dismiss": "Only click to dismiss this warning if you feel comfortable to watch it."
   },
   "youtubeadvice": {
-    "yt_title": "YouTube Button",
-    "yt_description": "If you're afraid someone is looking over your shoulder, just press the YouTube button and search for your favourite song (this may use some of your data)."
+    "yt_title": "YouTube button",
+    "yt_description": "If you're afraid someone is looking over your shoulder, just press the YouTube button and search for your favourite song."
   },
   "askquestion": {
     "what_q": "What is your question?",
@@ -71,9 +71,11 @@
     "nick": "Nickhil",
     "nick_info": "India / Sweden",
     "nick_bio": "I believe everyone has the right to adequate sex-education. Growing up in India, my puberty was full of myths around sex. I want teenagers to get better information than what I got, to support them with their concerns. Two years ago, I moved to Sweden. It took me a while to get used to the new cultural signals and find my own place in the country. By now, I feel at home here and look forward to the coming years to come.",
+    "zain": "Zain",
+    "zain_info": "Syria / Germany",
+    "zain_bio": "Access to information about health, hygiene and sex is needed to make informed decisions – independently of age and no matter where one comes from. I think sex-education is something you will truly be using for the rest of your life as it plays a role in forming one’s own confidence, self-worth and identy. I am eager to support this journey!.",
     "cta": "Do you think you will like to be an ambassador and help other young people in the adventure of growing up? Please send us an email at <a href='mailto:contact@thosequestions.de'>contact@thosequestions.de</a> and we'll get in touch with you to see how can you support the project.",
     "join_us": "Join Us!"
-
   },
   "privacy": {
     "title": "Privacy",

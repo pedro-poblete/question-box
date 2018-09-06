@@ -90,10 +90,12 @@ export default {
 .media-insert {
   position: absolute;
   z-index: 1;
+  width: 270px;
+  overflow: hidden;
 }
 
 .nsfw-filter {
-  width:300px;
+  width:270px;
   height:174px;
   z-index: 2;
   background: url('../../assets/content-warning.jpg') no-repeat right top;
@@ -124,16 +126,22 @@ export default {
 }
 
 .colored-border {
-  border-left: 3px solid #5ECBFA;
+  border-left: 3px solid #00A9F8;
+  margin-bottom: 75px;
 }
 
 .question-details h2 {
   color: #00A9F8;
+  text-transform: none;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0;
 }
 
 .short-answer {
-  font-size: 1.2em;
-  line-height: 1.5;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 .more {
@@ -142,12 +150,14 @@ export default {
   background: 0;
   color: #00A9F8;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   font-weight: bold;
   font-family: 'Nato Sans', sans-serif;
+  font-size: 12px;
 }
 
-.long-answer {
-  font-size: 0.9em;
+.long-answer p {
+  font-size: 14px;
+  line-height: 25px;
 }
 </style>

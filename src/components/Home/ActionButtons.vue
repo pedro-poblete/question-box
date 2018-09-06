@@ -77,6 +77,10 @@ export default {
 
 <style>
 
+.action-buttons {
+  margin-bottom: 60px;
+}
+
 .scale-in-ver-top {
   animation: scale-in-ver-top 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }

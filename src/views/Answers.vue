@@ -69,5 +69,6 @@ export default {
 <style>
 #searchAnswer {
   margin-top: 30px;
+  margin-bottom: 0px;
 }
 </style>

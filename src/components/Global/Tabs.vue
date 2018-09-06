@@ -54,8 +54,8 @@ export default {
   align-items: flex-end;
   padding-bottom: 10px;
   justify-content: center;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .nav-bar-item-active {

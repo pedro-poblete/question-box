@@ -10,8 +10,10 @@
       </div>
     </header>
     <router-view/>
+    <div
+    v-if="!($route.name === 'home' || $route.name === 'ask')"
+    class="back-to-top"><p @click="backToTop()">Back To Top</p></div>
     <footer>
-      <div class="back-to-top"><p @click="backToTop()">Back To Top</p></div>
       <ul class="navigation-footer">
         <li>
           <svg class="icon-footer" viewBox="0 0 209.3 209.3">
@@ -167,12 +169,15 @@ export default {
     content: " ";
     z-index: -1000;
     position: fixed;
-    margin-top: -10px;
-    margin-left: -40px;
-    height: 50px;
-    width: 50px;
+    margin-top: -6px;
+    margin-left: -36px;
+    height: 40px;
+    width: 40px;
     text-align: center;
     background: white;
+    border-width: 1px;
+    border-color: #eb361d;
+    border-style: solid;
     border-radius: 100%;
     font-size: 1.5rem;
   }
@@ -191,21 +196,13 @@ export default {
     transform: scale(1);
   }
   100% {
-    transform: scale(1.9);
+    transform: scale(1.6);
   }
 }
 
   a {
     color: #00A9F8;
     text-decoration: none;
-  }
-
-  footer {
-    background-color: #f2988c;
-    color: #ffffff;
-    padding: 0 0 40px 0;
-    width:100%;
-    margin-top: 78px;
   }
 
   .back-to-top {
@@ -215,10 +212,20 @@ export default {
 
   .back-to-top p {
     line-height: normal;
-    margin: 0 0 10px 0;
+    margin: 0;
     padding: 20px;
     text-transform: uppercase;
+    letter-spacing: 2px;
     font-size: 10px;
+    font-weight: 600;
+    color: #00A9F8;
+  }
+
+  footer {
+    background-color: #f2988c;
+    color: #ffffff;
+    padding: 40px 0 40px 0;
+    width:100%;
   }
 
   .icon-footer {

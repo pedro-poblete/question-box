@@ -5,13 +5,23 @@
       <p v-html="$t('ambassadors.description')"></p>
     </div>
     <div class="ambassador">
-      <div class="ambassador-header">
+      <div class="ambassador-header ambassador-header-left">
         <h3>{{$t('ambassadors.nick')}}<span class="age">, 25</span></h3>
         <h4>{{$t('ambassadors.nick_info')}}</h4>
       </div>
       <img src="../assets/nick.jpg" class="fullwidth-image" alt="Nickhil Picture">
       <div class="ambassador-bio">
         <p>{{$t('ambassadors.nick_bio')}}</p>
+      </div>
+    </div>
+    <div class="ambassador">
+      <div class="ambassador-header ambassador-header-right">
+        <h3>{{$t('ambassadors.zain')}}<span class="age">, 24</span></h3>
+        <h4>{{$t('ambassadors.zain_info')}}</h4>
+      </div>
+      <img src="../assets/Zain.jpeg" class="fullwidth-image" alt="Zain Picture">
+      <div class="ambassador-bio">
+        <p>{{$t('ambassadors.zain_bio')}}</p>
       </div>
     </div>
     <div class="container">
@@ -35,7 +45,7 @@ export default {
 }
 
 .ambassador {
-  margin: 75px auto 0 auto;
+  margin: 50px auto -50px auto;
   position: relative;
   max-width: 450px;
 }
@@ -45,10 +55,16 @@ export default {
   padding: 15px;
   position: absolute;
   top:-25px;
-  left: 25px;
-  float: left;
   background-color: #ffffff;
-  z-index: 10;
+  z-index: 5;
+}
+
+.ambassador-header-left {
+  left: 25px;
+}
+
+.ambassador-header-right {
+  right: 25px;
 }
 
 .age {
@@ -70,33 +86,31 @@ export default {
 
 .ambassador-bio {
   margin: 0 auto;
-  width:300px;
-  padding: 15px;
+  width:270px;
+  padding: 15px 15px 15px 25px;
   top: -50px;
   position: relative;
   background-color: #ffffff;
-}
-
-.ambassador-bio::after {
-  content: " “ ";
-  font-family: serif;
-  font-size: 46px;
-  color: #B0B0B0;
-  line-height: 1;
-  text-align: center;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 2px;
-  right: -2px;
-  /* background-color: #ffffff; */
-
 }
 
 .ambassador-bio p {
   font-style: italic;
   line-height: 1.7;
   margin-top: 0;
+}
+
+.ambassador-bio p::before {
+  position:absolute;
+  content: " “ ";
+  margin: 0;
+  padding: 0;
+  left: 17px;
+  z-index: 100;
+}
+
+.ambassador-bio p::after {
+  content: " ” ";
+  position:absolute;
 }
 
 .cta {

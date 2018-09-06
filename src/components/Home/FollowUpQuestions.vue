@@ -189,8 +189,8 @@ export default {
 }
 
 .follow-up #email {
-  margin-left: 25px;
   margin-top: 5px;
+  width:100%;
   font-family: 'Noto Sans', sans-serif;
 }
 
@@ -200,7 +200,6 @@ export default {
 }
 
 #extraInformation input[type=number] {
-  margin-left: 10px;
   display:inline-block;
   font-family: 'Noto Sans', sans-serif;
 }
