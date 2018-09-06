@@ -6,7 +6,7 @@
       <i18n path="answers.explain_nsfw" tag="p">
         <router-link :to="{ name: 'privacy'}">{{$t('app.privacy')}}</router-link>
       </i18n>
-        <input id="searchAnswer" type="text" :placeholder="$t('answers.search')" v-model='searchQuery'>
+      <input id="searchAnswer" type="text" :placeholder="$t('answers.search')" v-model='searchQuery'>
     </div>
     <article class="question-list">
       <div v-for="question in questions" :key="question.id">
@@ -68,14 +68,6 @@ export default {
 
 <style>
 #searchAnswer {
-  border-color: #0090F2;
-  border-radius: 20px;
-  border-width: 2px;
-  font-size: 1.5em;
-  padding: 10px;
-  width: 200px;
-  margin: 25px 0 25px 0;
-  font-family: 'Noto Sans', sans-serif;
+  margin-top: 30px;
 }
-
 </style>

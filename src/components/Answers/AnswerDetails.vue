@@ -115,21 +115,20 @@ export default {
 }
 
 .question-details {
-  padding-left: 25px;
-  width:300px;
-  border-radius: 10px;
-  margin: 30px auto;
-  border-left: 6px double #ffffff;
-  border-right: 6px double #ffffff;
-
+  position: relative;
+  left: -13px;
+  padding-left: 20px;
+  width:270px;
+  margin: 50px auto;
+  border-left: 3px solid #ffffff;
 }
 
 .colored-border {
-  border-left: 6px double #0090F2;
+  border-left: 3px solid #5ECBFA;
 }
 
 .question-details h2 {
-  color: #0090F2;
+  color: #00A9F8;
 }
 
 .short-answer {
@@ -141,7 +140,7 @@ export default {
   padding:0;
   border: 0;
   background: 0;
-  color: #0090F2;
+  color: #00A9F8;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold;

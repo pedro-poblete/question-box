@@ -43,7 +43,7 @@ export default {
   width: 100%;
   box-sizing:border-box;
   padding: 20px 30px;
-  background-color: #ff0000;
+  background-color: #eb361d;
   color: #ffffff;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;

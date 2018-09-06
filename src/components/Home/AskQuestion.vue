@@ -57,17 +57,13 @@ export default {
 <style>
 
 .question-form textarea {
-  width: 260px;
-  border-radius: 20px;
-  border-color: #0090F2;
-  border-width: 2px;
+  width: 270px;
   margin: auto;
   display: block;
-  height: 15em;
+  height: 300px;
   margin-top: 50px;
   margin-bottom: 20px;
   padding: 20px;
-  font-family: 'Noto Sans', sans-serif;
 }
 
 .question-form fieldset {

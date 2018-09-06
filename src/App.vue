@@ -11,6 +11,7 @@
     </header>
     <router-view/>
     <footer>
+      <div class="back-to-top"><p @click="backToTop()">Back To Top</p></div>
       <ul class="navigation-footer">
         <li>
           <svg class="icon-footer" viewBox="0 0 209.3 209.3">
@@ -34,6 +35,12 @@
               <path d="M256 0C114.5 0 0 114.5 0 256c0 141.5 114.5 256 256 256 141.5 0 256-114.5 256-256C512 114.5 397.5 0 256 0zM256 472c-119.4 0-216-96.6-216-216 0-119.4 96.6-216 216-216 119.4 0 216 96.6 216 216C472 375.4 375.4 472 256 472z"/><path d="M256 128.5c-44.1 0-80 35.9-80 80 0 11 9 20 20 20s20-9 20-20c0-22.1 17.9-40 40-40 22.1 0 40 17.9 40 40 0 22.1-17.9 40-40 40 -11 0-20 9-20 20v50c0 11 9 20 20 20 11 0 20-9 20-20v-32.5c34.5-8.9 60-40.3 60-77.5C336 164.4 300.1 128.5 256 128.5z"/>
             </svg>
             <router-link tag="a" :to="{ name : 'about' }" v-html="$t('app.about')"></router-link>
+          </li>
+          <li>
+            <svg class="icon-footer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 505.4 505.4">
+              <path d="m437.1 233.45c14.8-10.4 24.6-27.7 24.6-47.2 0-31.9-25.8-57.7-57.7-57.7s-57.7 25.8-57.7 57.7c0 19.5 9.7 36.8 24.6 47.2-12.7 4.4-24.3 11.2-34.1 20-13.5-11.5-29.4-20.3-46.8-25.5 21.1-12.8 35.3-36.1 35.3-62.6 0-40.4-32.7-73.1-73.1-73.1s-73.1 32.8-73.1 73.1c0 26.5 14.1 49.8 35.3 62.6-17.2 5.2-32.9 13.9-46.3 25.2-9.8-8.6-21.2-15.3-33.7-19.6 14.8-10.4 24.6-27.7 24.6-47.2 0-31.9-25.8-57.7-57.7-57.7s-57.7 25.8-57.7 57.7c0 19.5 9.7 36.8 24.6 47.2-39.7 13.7-68.2 51.4-68.2 95.7v6.6c0 0.2 0.2 0.4 0.4 0.4h122.3c-0.7 5.5-1.1 11.2-1.1 16.9v6.8c0 29.4 23.8 53.2 53.2 53.2h155c29.4 0 53.2-23.8 53.2-53.2v-6.8c0-5.7-0.4-11.4-1.1-16.9h123.1c0.2 0 0.4-0.2 0.4-0.4v-6.6c-0.2-44.4-28.6-82.1-68.3-95.8zm-74.8-47.3c0-23 18.7-41.7 41.7-41.7s41.7 18.7 41.7 41.7c0 22.7-18.3 41.2-40.9 41.7h-0.8s-0.5 0-0.8 0c-22.7-0.4-40.9-18.9-40.9-41.7zm-167.4-20.8c0-31.5 25.6-57.1 57.1-57.1s57.1 25.6 57.1 57.1c0 30.4-23.9 55.3-53.8 57h-3.3-3.3c-29.9-1.7-53.8-26.6-53.8-57zm-135.6 20.8c0-23 18.7-41.7 41.7-41.7s41.7 18.7 41.7 41.7c0 22.7-18.3 41.2-40.9 41.7h-0.8s-0.5 0-0.8 0c-22.6-0.4-40.9-18.9-40.9-41.7zm66.2 134h-109.3c4.5-42.6 40.5-76 84.2-76.3h0.6s0.4 0 0.6 0c20.8 0.1 39.8 7.8 54.5 20.3-14.4 15.6-25.1 34.8-30.6 56zm241.3 39.8c0 20.5-16.7 37.2-37.2 37.2h-155c-20.5 0-37.2-16.7-37.2-37.2v-6.8c0-62.1 49.6-112.9 111.3-114.7 1.1 0.1 2.3 0.1 3.4 0.1s2.3 0 3.4-0.1c61.7 1.8 111.3 52.6 111.3 114.7v6.8zm11.9-39.8c-5.5-21.1-16-40-30.3-55.6 14.8-12.8 34-20.5 55-20.7h0.6s0.4 0 0.6 0c43.7 0.3 79.7 33.7 84.2 76.3h-110.1z"/>
+            </svg>
+            <router-link tag="a" :to="{ name : 'ambassadors' }" v-html="$t('app.ambassadors')"></router-link>
           </li>
         </ul>
       </footer>
@@ -88,6 +95,15 @@ export default {
         window.location.href = 'https://www.youtube.com'
       }
     },
+    backToTop () {
+      var timerHandle = setInterval(function() {
+        if (document.body.scrollTop != 0 || document.documentElement.scrollTop != 0) {
+          window.scrollBy(0,-50)
+        } else {
+          clearInterval(timerHandle)
+        }
+      },10)
+    },
     setLang (lang) {
       this.$i18n.locale = lang
       this.$store.commit('setPreferredLocale', lang)
@@ -110,6 +126,7 @@ export default {
   /* GENERAL  */
   body {
     margin: 0;
+    font-size: 16px;
   }
 
   #app {
@@ -179,23 +196,36 @@ export default {
 }
 
   a {
-    color: #0090F2;
+    color: #00A9F8;
     text-decoration: none;
   }
 
   footer {
-    background-color: #D88A8A;
+    background-color: #f2988c;
     color: #ffffff;
-    padding:40px 0;
+    padding: 0 0 40px 0;
     width:100%;
     margin-top: 78px;
+  }
+
+  .back-to-top {
+    text-align: center;
+    display: block
+  }
+
+  .back-to-top p {
+    line-height: normal;
+    margin: 0 0 10px 0;
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 10px;
   }
 
   .icon-footer {
     top:0.125em;
     position:relative;
     fill: #404040;
-    height: 1em;
+    height: 16px;
     display: inline-block;
     margin-right:30px;
   }
@@ -240,21 +270,32 @@ export default {
 
   .container {
     margin: 0 auto;
-    width: 300px;
+    width: 270px;
   }
 
   h1 {
-    margin-bottom: 1.2em;
-    font-size: 1.5em;
-    font-weight: 400;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 34px;
   }
 
-  h2 {
+  /* h2 {
     font-weight: 400;
+  } */
+
+  h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1em;
   }
 
   p {
-    line-height:2;
+    line-height:25px;
+    font-size: 16px;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
 
   /* Home */
@@ -268,23 +309,24 @@ export default {
   }
 
   .button {
+    background-color: #2E40F5;
+    display:block;
     margin:auto;
     margin-bottom:2em;
     width: 290px;
     padding:25px 20px;
-    display:block;
-    text-transform: uppercase;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
     font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     border-radius: 15px;
     border:0;
-    background-color: #4A4AF0;
     color: #ffffff;
-    font-size: 16px;
-    letter-spacing: 1px;
   }
 
   .highlight-button {
-    background-color: #0090F2;
+    background-color: #00A9F8;
   }
 
   .small-button {
@@ -293,5 +335,26 @@ export default {
     font-size:0.8em;
     margin-left: 20px;
     margin-top:36px;
+  }
+
+  input, textarea {
+    border-color: #00A9F8;
+    border-radius: 20px;
+    border-style:solid;
+    border-width: 2px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 33px;
+    font-weight: 600;
+    padding: 10px;
+    width: 200px;
+    margin: 25px 0 25px 0;
+    font-family: 'Noto Sans', sans-serif;
+    color: #00A9F8;
+    box-sizing: border-box;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: #92DBF9;
   }
 </style>

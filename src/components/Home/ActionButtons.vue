@@ -1,18 +1,24 @@
 <template>
   <div class="action-buttons">
 
-    <button
-      class="button highlight-button"
-      @click="asking = asking * -1">{{$t('actionbuttons.ask_q')}}</button>
-
-    <transition name="appearDown">
-      <AskQuestion v-if="asking > -1" @allSent="asking = -2 "/>
-    </transition>
-
     <transition name="fade">
-      <div class='sentNotification container' v-if="asking < -1">
+      <div class='sentNotification container' v-if="asking === 'done' ">
         <h2>{{$t('actionbuttons.addit_det')}}</h2>
       </div>
+    </transition>
+
+    <button
+      class="button highlight-button"
+      @click="changeAsking()"
+      v-if="asking === 'done'">{{$t('actionbuttons.ask_another')}}</button>
+
+      <button
+        class="button highlight-button"
+        @click="changeAsking()"
+        v-if="asking === 'no' || asking === 'asking' ">{{$t('actionbuttons.ask_q')}}</button>
+
+    <transition name="appearDown">
+      <AskQuestion v-if="asking === 'asking'" @allSent="asking = 'done' "/>
     </transition>
 
     <button
@@ -35,7 +41,7 @@ export default {
   },
   data () {
     return {
-      asking: -1
+      asking: 'no'
     }
   },
   mounted() {
@@ -45,12 +51,19 @@ export default {
     changeView (navigationPath) {
       this.$router.push({path: navigationPath})
     },
+    changeAsking() {
+      if (this.asking === 'asking') {
+        this.asking = 'no'
+      } else {
+        this.asking = 'asking'
+      }
+    },
     checkRoute() {
       if (this.$route.name == 'home') {
-        this.asking = -1;
+        this.asking = 'no';
       }
       if (this.$route.name == 'ask') {
-        this.asking = 1;
+        this.asking = 'asking';
       }
     }
   },

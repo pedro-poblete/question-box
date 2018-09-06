@@ -5,9 +5,10 @@
   },
   "actionbuttons" : {
     "ask_q" : "Ask A Question",
+    "ask_another" : "Ask Another Question",
     "see_ans": "See Other Answers",
     "meet_vols" : "Meet The Ambassadors",
-    "addit_det" : "Additional details sent to the server. Thank you! Well get back in touch as soon as possible."
+    "addit_det" : "Thank you! We will get to your question as soon as possible."
   },
   "answerdetails" : {
     "more" : "More...",
@@ -35,12 +36,12 @@
     "more_info": "We would like to ask you some more information to answer your question better. However, this is not required.",
     "age": "How old are you?",
     "additional_details": "Is there anything else you'll like to share with us or that you want to add?",
-    "extra_question": "If you have an additional question, you can ask it here. We will try to answer it as well in a week's time.",
+    "extra_question": "Do you have any other questions?",
     "done": "Done",
     "privacy_reminder": "You can always visit the {0} page to change your notification settings."
   },
   "answers": {
-    "title": "Answers to &#34;those questions&#34;.",
+    "title": "Answers",
     "explanation": "Many adolescents have similar questions like you. Here you can read submitted questions by others and the answers already given by our ambassadors",
     "explain_nsfw": "Some answers contain videos or pictures, and some of these could make you feel uncomfortable. We want you to decide for yourself and only watch those things when you are sure that you feel okay with it. We have marked any explicit content with a warning. You may dismiss that warning at any moment and/or completely disable it from your {0} section",
     "search": "search",
@@ -48,11 +49,12 @@
   },
   "app": {
     "privacy": "Privacy",
-    "about": "About <em>Those Questions</em>",
+    "about": "About",
     "app_name": "Those Questions",
     "home": "Home",
     "ask": "Ask",
-    "answers": "Answers"
+    "answers": "Answers",
+    "ambassadors": "Ambassadors"
   },
   "about": {
     "title": "About <em>Those Questions</em>",
@@ -64,12 +66,14 @@
     "about_project": "<p>The project is led by a young international team who have all been working in culturally sensitive education for a long time and includes people coming from Germany, Chile, India, and Belgium.</p> <p>Funding comes from the <a href='https://prototypefund.de' target='_blank'>Prototype Fund</a>, which connects iterative software development to government funding.</p>"
   },
   "ambassadors": {
-    "title": "Meet the Ambassadors",
+    "title": "Ambassadors",
     "description": "The ambassadors are committed, young people who want to provide answers and perspectives to your questions.",
     "nick": "Nickhil",
-    "nick_info": "India/Sweden",
-    "nick_bio": "\"I believe everyone has the right for adequate sex-education. Growing up in India, my puberty was full of myths around sex-topics and I want adolescents to have the chance to get correct information about their concerns. I moved to Sweden two years ago and it took me a while to read the new culture's signs and find my own place in the country.\"",
-    "cta": "Do you think you will like to be an ambassador and help other young people in the adventure of growing up? Please send us an email at <a href='mailto:contact@thosequestions.de'>contact@thosequestions.de</a> and we'll get in touch with you to see how can you support the project."
+    "nick_info": "India / Sweden",
+    "nick_bio": "I believe everyone has the right to adequate sex-education. Growing up in India, my puberty was full of myths around sex. I want teenagers to get better information than what I got, to support them with their concerns. Two years ago, I moved to Sweden. It took me a while to get used to the new cultural signals and find my own place in the country. By now, I feel at home here and look forward to the coming years to come.",
+    "cta": "Do you think you will like to be an ambassador and help other young people in the adventure of growing up? Please send us an email at <a href='mailto:contact@thosequestions.de'>contact@thosequestions.de</a> and we'll get in touch with you to see how can you support the project.",
+    "join_us": "Join Us!"
+
   },
   "privacy": {
     "title": "Privacy",

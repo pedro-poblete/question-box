@@ -57,7 +57,7 @@ export default {
 }
 
 .about-team {
-  margin: 0 auto 25px auto;
+  margin: 0 auto 50px auto;
 }
 
 .about-team h3 {

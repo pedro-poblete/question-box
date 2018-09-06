@@ -32,7 +32,8 @@
              type="email"
              :placeholder="$t('followupquestions.enter_email')"
              v-if="emailNotification && showNotification"
-             v-model="email">
+             v-model="email"
+             @keydown.enter.stop.prevent>
       <div class="checkbox-and-label" v-if="showNotification">
         <input id="pushNotification"
                type="checkbox"
@@ -49,7 +50,8 @@
                min="5"
                max="150"
                steps="1"
-               v-model="age">
+               v-model="age"
+               @keydown.enter.stop.prevent>
         <textarea :placeholder="$t('followupquestions.additional_details')"
                   v-model="additionalInformation"></textarea>
         <textarea id="extraQ1"
@@ -172,6 +174,7 @@ export default {
   width: 75px;
   margin: 20px;
   display:inline-block;
+  line-height: normal;
 }
 
 .checkbox-and-label {

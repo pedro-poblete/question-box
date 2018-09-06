@@ -15,6 +15,7 @@
       </div>
     </div>
     <div class="container">
+      <h2>{{$t('ambassadors.join_us')}}</h2>
       <p v-html="$t('ambassadors.cta')" class="cta"></p>
     </div>
   </section>
@@ -74,6 +75,22 @@ export default {
   top: -50px;
   position: relative;
   background-color: #ffffff;
+}
+
+.ambassador-bio::after {
+  content: " “ ";
+  font-family: serif;
+  font-size: 46px;
+  color: #B0B0B0;
+  line-height: 1;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 2px;
+  right: -2px;
+  /* background-color: #ffffff; */
+
 }
 
 .ambassador-bio p {

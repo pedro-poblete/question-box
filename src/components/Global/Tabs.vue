@@ -35,7 +35,7 @@ export default {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background: #0090F2;
+  background: #00A9F8;
   box-shadow: 0px 2px 16px 3px rgba(0, 0, 0, 0.20);
   height:55px;
   flex-direction: row;
@@ -50,12 +50,12 @@ export default {
   font-size: 0.8em;
   display: flex;
   flex-grow: 1;
-  flex-basis: 50px;
+  flex-basis: 90px;
   align-items: flex-end;
   padding-bottom: 10px;
   justify-content: center;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .nav-bar-item-active {
