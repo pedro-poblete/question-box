@@ -125,6 +125,10 @@ export default {
   border-left: 3px solid #ffffff;
 }
 
+.question-details:last-of-type {
+  margin-bottom: 0;
+}
+
 .colored-border {
   border-left: 3px solid #00A9F8;
   margin-bottom: 75px;

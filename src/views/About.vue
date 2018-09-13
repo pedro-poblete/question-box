@@ -6,14 +6,14 @@
     <div>
       <img src="../assets/about_project.jpg" class="fullwidth-image" alt="Team Picture">
     </div>
-    <div class="about-card">
-      <i18n path="about.description" tag="p">
+    <div class="text-over-image">
+      <i18n path="about.description" tag="p" class="about-description">
         <em>{{$t('app.app_name')}}</em>
         <router-link :to="{ name: 'ambassadors'}">{{$t('about.young_people')}}</router-link>
       </i18n>
     </div>
     <div class="container about-team">
-      <h3>{{$t('about.team_title')}}</h3>
+      <h2>{{$t('about.team_title')}}</h2>
       <div v-html="$t('about.about_project')"></div>
     </div>
     <img src="../assets/qb-team.jpg" class="fullwidth-image" alt="Team Picture">
@@ -28,32 +28,34 @@ export default {
 </script>
 
 <style>
+
+.about-title {
+  margin-bottom: 30px;
+}
+
+/* TODO: MOVE THIS TO ANOTHER COMPONENT */
 .fullwidth-image {
   width: 100%;
+  /* TODO: CHECK MAX-WIDTH */
   max-width: 450px;
   margin:auto;
   display:block;
 }
 
-.about-title h1 {
-  margin-bottom: 50px;
-  margin-top: 50px;
-
-}
-
-.about-card {
+.text-over-image {
   margin: 0 auto;
-  width:300px;
-  padding: 25px 25px 0 25px;
+  width: 270px;
+  padding: 15px 15px 15px 25px;
   top: -50px;
   position: relative;
   background-color: #ffffff;
 }
 
-.about-card p {
-  font-size: 1.25em;
-  line-height: 1.5;
+.about-description {
   margin: 0;
+  font-size: 20px;
+  line-height: 30px;
+
 }
 
 .about-team {
@@ -61,13 +63,12 @@ export default {
 }
 
 .about-team h3 {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 1em;
+
 }
 
 .about-team p {
-  line-height: 1.5;
+  margin-top: 0;
+
 }
 
 </style>

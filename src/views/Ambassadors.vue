@@ -10,8 +10,8 @@
         <h4>{{$t('ambassadors.nick_info')}}</h4>
       </div>
       <img src="../assets/nick.jpg" class="fullwidth-image" alt="Nickhil Picture">
-      <div class="ambassador-bio">
-        <p>{{$t('ambassadors.nick_bio')}}</p>
+      <div class="text-over-image">
+        <p class="ambassador-bio">{{$t('ambassadors.nick_bio')}}</p>
       </div>
     </div>
     <div class="ambassador">
@@ -20,13 +20,13 @@
         <h4>{{$t('ambassadors.zain_info')}}</h4>
       </div>
       <img src="../assets/Zain.jpeg" class="fullwidth-image" alt="Zain Picture">
-      <div class="ambassador-bio">
-        <p>{{$t('ambassadors.zain_bio')}}</p>
+      <div class="text-over-image">
+        <p class="ambassador-bio">{{$t('ambassadors.zain_bio')}}</p>
       </div>
     </div>
-    <div class="container">
+    <div class="container cta">
       <h2>{{$t('ambassadors.join_us')}}</h2>
-      <p v-html="$t('ambassadors.cta')" class="cta"></p>
+      <p v-html="$t('ambassadors.cta')"></p>
     </div>
   </section>
 </template>
@@ -40,6 +40,10 @@ export default {
 
 <style>
 
+.ambassadors-intro {
+  margin-bottom: 60px;
+}
+
 .ambassadors-intro p {
   line-height: 1.5;
 }
@@ -52,9 +56,9 @@ export default {
 
 .ambassador-header {
   width: auto;
-  padding: 15px;
+  padding: 15px 15px 5px 15px;
   position: absolute;
-  top:-25px;
+  top:-30px;
   background-color: #ffffff;
   z-index: 5;
 }
@@ -85,21 +89,12 @@ export default {
 }
 
 .ambassador-bio {
-  margin: 0 auto;
-  width:270px;
-  padding: 15px 15px 15px 25px;
-  top: -50px;
-  position: relative;
-  background-color: #ffffff;
-}
-
-.ambassador-bio p {
   font-style: italic;
   line-height: 1.7;
   margin-top: 0;
 }
 
-.ambassador-bio p::before {
+.ambassador-bio::before {
   position:absolute;
   content: " “ ";
   margin: 0;
@@ -108,14 +103,19 @@ export default {
   z-index: 100;
 }
 
-.ambassador-bio p::after {
+.ambassador-bio::after {
   content: " ” ";
   position:absolute;
 }
 
 .cta {
-  font-size: 1.1em;
-  line-height: 1.5;
+  margin-top: 35px;
+}
+
+.cta p {
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 25px;
 }
 
 </style>
