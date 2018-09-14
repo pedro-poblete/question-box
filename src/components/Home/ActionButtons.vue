@@ -44,26 +44,26 @@ export default {
       asking: 'no'
     }
   },
-  mounted() {
+  mounted () {
     this.checkRoute()
   },
   methods: {
     changeView (navigationPath) {
       this.$router.push({path: navigationPath})
     },
-    changeAsking() {
+    changeAsking () {
       if (this.asking === 'asking') {
         this.asking = 'no'
       } else {
         this.asking = 'asking'
       }
     },
-    checkRoute() {
+    checkRoute () {
       if (this.$route.name == 'home') {
-        this.asking = 'no';
+        this.asking = 'no'
       }
       if (this.$route.name == 'ask') {
-        this.asking = 'asking';
+        this.asking = 'asking'
       }
     }
   },

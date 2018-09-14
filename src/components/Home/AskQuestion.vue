@@ -23,9 +23,9 @@ export default {
   computed: {
     questionTextLocated () {
       if (this.$i18n.locale === 'de') {
-        return { "de": this.questionText }
+        return { 'de': this.questionText }
       } else {
-        return { "en": this.questionText }
+        return { 'en': this.questionText }
       }
     }
   },
@@ -64,6 +64,22 @@ export default {
   margin-top: 50px;
   margin-bottom: 20px;
   padding: 20px;
+}
+
+@media screen and (min-width: 450px) {
+
+  .question-form textarea {
+    width: 325px;
+  }
+
+}
+
+@media screen and (min-width: 570px) {
+
+  .question-form textarea {
+    width: 325px;
+  }
+
 }
 
 .question-form fieldset {

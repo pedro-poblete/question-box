@@ -9,8 +9,8 @@
         <h3>{{$t('ambassadors.nick')}}<span class="age">, 25</span></h3>
         <h4>{{$t('ambassadors.nick_info')}}</h4>
       </div>
-      <img src="../assets/nick.jpg" class="fullwidth-image" alt="Nickhil Picture">
-      <div class="text-over-image">
+      <img src="../assets/nick.jpg" class="ambassador-picture" alt="Nickhil Picture">
+      <div class="ambassador-body">
         <p class="ambassador-bio">{{$t('ambassadors.nick_bio')}}</p>
       </div>
     </div>
@@ -19,8 +19,8 @@
         <h3>{{$t('ambassadors.zain')}}<span class="age">, 24</span></h3>
         <h4>{{$t('ambassadors.zain_info')}}</h4>
       </div>
-      <img src="../assets/Zain.jpeg" class="fullwidth-image" alt="Zain Picture">
-      <div class="text-over-image">
+      <img src="../assets/Zain.jpeg" class="ambassador-picture" alt="Zain Picture">
+      <div class="ambassador-body">
         <p class="ambassador-bio">{{$t('ambassadors.zain_bio')}}</p>
       </div>
     </div>
@@ -52,6 +52,15 @@ export default {
   margin: 50px auto -50px auto;
   position: relative;
   max-width: 450px;
+}
+
+@media screen and (min-width: 450px) {
+
+  .ambassador {
+    margin: 50px auto -30px auto;
+
+  }
+
 }
 
 .ambassador-header {
@@ -88,6 +97,31 @@ export default {
   font-weight: 400;
 }
 
+.ambassador-picture {
+  width: 100%;
+  max-width: 450px;
+  margin:auto;
+  display:block;
+}
+
+.ambassador-body {
+  margin: 0 auto;
+  width: 270px;
+  padding: 15px 15px 15px 25px;
+  top: -50px;
+  position: relative;
+  background-color: #ffffff;
+}
+
+@media screen and (min-width: 450px) {
+
+  .ambassador-body {
+    width: 325px;
+
+  }
+
+}
+
 .ambassador-bio {
   font-style: italic;
   line-height: 1.7;
@@ -110,6 +144,15 @@ export default {
 
 .cta {
   margin-top: 35px;
+}
+
+@media screen and (min-width: 450px) {
+
+  .cta {
+    margin-top: 75px;
+
+  }
+
 }
 
 .cta p {

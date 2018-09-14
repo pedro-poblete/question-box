@@ -1,22 +1,22 @@
 <template>
-  <section>
-    <div class="container">
-      <h1 v-html="$t('answers.title')"></h1>
-      <p>{{$t('answers.explanation')}}</p>
-      <i18n path="answers.explain_nsfw" tag="p">
-        <router-link :to="{ name: 'privacy'}">{{$t('app.privacy')}}</router-link>
-      </i18n>
-      <input id="searchAnswer" type="text" :placeholder="$t('answers.search')" v-model='searchQuery'>
+<section>
+  <div class="container">
+    <h1 v-html="$t('answers.title')"></h1>
+    <p>{{$t('answers.explanation')}}</p>
+    <i18n path="answers.explain_nsfw" tag="p">
+      <router-link :to="{ name: 'privacy'}">{{$t('app.privacy')}}</router-link>
+    </i18n>
+    <input id="searchAnswer" type="text" :placeholder="$t('answers.search')" v-model='searchQuery'>
+  </div>
+  <article class="question-list">
+    <div v-for="question in questions" :key="question.id">
+      <AnswerDetails :question="question" />
     </div>
-    <article class="question-list">
-      <div v-for="question in questions" :key="question.id">
-        <AnswerDetails :question="question" />
-      </div>
-      <div v-if="questions.length == 0" class="question-details">
-        <h2>{{$t('answers.no_results')}}</h2>
-      </div>
-    </article>
-  </section>
+    <div v-if="questions.length == 0" class="expanding-content">
+      <h2>{{$t('answers.no_results')}}</h2>
+    </div>
+  </article>
+</section>
 </template>
 
 <script>
@@ -32,7 +32,7 @@ export default {
   },
   data () {
     return {
-      searchQuery: '',
+      searchQuery: ''
     }
   },
   computed: {
@@ -46,8 +46,8 @@ export default {
         //   if (searchSpace.includes( keyword ) ) {
         //     return true
         //   }
-        for (var keyword of this.searchQuery.toLowerCase().split(" ")) {
-          if (!searchSpace.includes( keyword ) ) {
+        for (var keyword of this.searchQuery.toLowerCase().split(' ')) {
+          if (!searchSpace.includes(keyword)) {
             allKeywords = false
           }
         }
@@ -62,7 +62,7 @@ export default {
         JSON.stringify(question).toLowerCase().includes(this.searchQuery.toLowerCase())
       )
     }
-  },
+  }
 }
 </script>
 
@@ -70,5 +70,9 @@ export default {
 #searchAnswer {
   margin-top: 30px;
   margin-bottom: 0px;
+}
+
+.question-list {
+  margin-top: 50px;
 }
 </style>

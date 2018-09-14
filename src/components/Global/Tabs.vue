@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'Tabs',
+  name: 'Tabs'
 }
 </script>
 

@@ -79,7 +79,7 @@ export default new Vuex.Store({
         process.env.VUE_APP_REST_API + 'public/' + data.questionId + '/', {
           'additional_details': data.additional_details,
           'asker_age': data.asker_age
-      })
+        })
     }
   }
 })

@@ -6,7 +6,6 @@ import Ambassadors from './views/Ambassadors.vue'
 import About from './views/About.vue'
 import Privacy from './views/Privacy.vue'
 
-
 Vue.use(Router)
 
 export default new Router({
@@ -22,7 +21,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home,
+      component: Home
     },
     {
       path: '/ask',

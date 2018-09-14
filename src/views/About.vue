@@ -36,8 +36,6 @@ export default {
 /* TODO: MOVE THIS TO ANOTHER COMPONENT */
 .fullwidth-image {
   width: 100%;
-  /* TODO: CHECK MAX-WIDTH */
-  max-width: 450px;
   margin:auto;
   display:block;
 }
@@ -51,19 +49,30 @@ export default {
   background-color: #ffffff;
 }
 
+@media screen and (min-width: 450px) {
+
+  .text-over-image {
+    width: 325px;
+  }
+
+}
+
+@media screen and (min-width: 570px) {
+
+  .text-over-image {
+    width: 480px;
+  }
+
+}
+
 .about-description {
   margin: 0;
   font-size: 20px;
   line-height: 30px;
-
 }
 
 .about-team {
   margin: 0 auto 50px auto;
-}
-
-.about-team h3 {
-
 }
 
 .about-team p {

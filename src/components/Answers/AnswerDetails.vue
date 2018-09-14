@@ -1,10 +1,10 @@
 <template>
-  <div class="question-details"
+  <div class="expanding-content"
        :class="{'colored-border' : showQuestion }">
-    <h2 @click="questionClicked()">{{ text }}</h2>
+    <h2 :class="{'expanding-title-inactive' : !showQuestion }" @click="questionClicked()">{{ text }}</h2>
     <div class="answer-body"
          v-if="showQuestion">
-      <p class="short-answer"> {{ short_answer}}</p>
+      <p class="first-text"> {{ short_answer}}</p>
       <button class="more"
               @click="showLongAnswer = true"
               v-if="!showLongAnswer">{{$t('answerdetails.more')}}</button>
@@ -44,27 +44,24 @@ export default {
     text () {
       if (this.$i18n.locale === 'de') {
         return this.question.text.de
-      }
-      else {
+      } else {
         return this.question.text.en
       }
     },
     short_answer () {
       if (this.$i18n.locale === 'de') {
         return this.question.answer.short_answer.de
-      }
-      else {
+      } else {
         return this.question.answer.short_answer.en
       }
     },
     long_answer () {
       if (this.$i18n.locale === 'de') {
         return marked(this.question.answer.long_answer.de)
-      }
-      else {
+      } else {
         return marked(this.question.answer.long_answer.en)
       }
-    },
+    }
   },
   methods: {
     questionClicked () {
@@ -116,25 +113,37 @@ export default {
   text-align: center;
 }
 
-.question-details {
+.expanding-content {
   position: relative;
   left: -13px;
   padding-left: 20px;
   width:270px;
-  margin: 50px auto;
+  margin: 25px auto 0 auto;
   border-left: 3px solid #ffffff;
 }
 
-.question-details:last-of-type {
-  margin-bottom: 0;
+@media screen and (min-width: 450px) {
+
+  .expanding-content {
+    width: 325px;
+  }
+
+}
+
+@media screen and (min-width: 570px) {
+
+  .expanding-content {
+    width: 480px;
+  }
+
 }
 
 .colored-border {
   border-left: 3px solid #00A9F8;
-  margin-bottom: 75px;
+  margin-bottom: 75px !important;
 }
 
-.question-details h2 {
+.expanding-content h2 {
   color: #00A9F8;
   text-transform: none;
   font-weight: 400;
@@ -143,7 +152,14 @@ export default {
   letter-spacing: 0;
 }
 
-.short-answer {
+.expanding-title-inactive::before {
+  content: " • ";
+  color: #00A9F8;
+  position: absolute;
+  left: 5px;
+}
+
+.first-text {
   font-size: 20px;
   line-height: 30px;
 }

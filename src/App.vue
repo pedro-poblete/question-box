@@ -57,7 +57,7 @@ export default {
   name: 'MainApp',
   components: {
     'YoutubeAdvice': YoutubeAdvice,
-    'Tabs': Tabs,
+    'Tabs': Tabs
   },
   beforeCreate () {
     this.$i18n.locale = this.$store.state.preferred_locale
@@ -76,7 +76,7 @@ export default {
     return {
       showModal: false,
       scrollTop: 0,
-      showNavBar: true,
+      showNavBar: true
     }
   },
   computed: {
@@ -98,13 +98,13 @@ export default {
       }
     },
     backToTop () {
-      var timerHandle = setInterval(function() {
+      var timerHandle = setInterval(function () {
         if (document.body.scrollTop != 0 || document.documentElement.scrollTop != 0) {
-          window.scrollBy(0,-50)
+          window.scrollBy(0, -50)
         } else {
           clearInterval(timerHandle)
         }
-      },10)
+      }, 10)
     },
     setLang (lang) {
       this.$i18n.locale = lang
@@ -119,7 +119,7 @@ export default {
       }
       this.scrollTop = window.scrollY
     }
-  },
+  }
 }
 </script>
 
@@ -281,16 +281,28 @@ export default {
     width: 270px;
   }
 
+  @media screen and (min-width: 450px) {
+
+    .container {
+      width: 325px;
+    }
+
+}
+
+@media screen and (min-width: 570px) {
+
+  .container {
+    width: 480px;
+  }
+
+}
+
   h1 {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
     line-height: 34px;
   }
-
-  /* h2 {
-    font-weight: 400;
-  } */
 
   h2 {
     font-weight: bold;
@@ -333,6 +345,14 @@ export default {
     color: #ffffff;
   }
 
+  @media screen and (min-width: 450px) {
+
+    .button {
+      width: 350px;
+    }
+
+}
+
   .highlight-button {
     background-color: #00A9F8;
   }
@@ -343,6 +363,10 @@ export default {
     font-size:0.8em;
     margin-left: 20px;
     margin-top:36px;
+  }
+
+  .long-button {
+    width: 170px;
   }
 
   input, textarea {

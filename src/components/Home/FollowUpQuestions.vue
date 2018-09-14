@@ -85,9 +85,9 @@ export default {
   computed: {
     questionTextLocated () {
       if (this.$i18n.locale === 'de') {
-        return { "de": this.additionalQuestion }
+        return { 'de': this.additionalQuestion }
       } else {
-        return { "en": this.additionalQuestion }
+        return { 'en': this.additionalQuestion }
       }
     },
     emailNotification: {
