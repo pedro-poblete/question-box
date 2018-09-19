@@ -18,20 +18,12 @@
                  @click="showNotificationOptions(false)">
          </div>
       </fieldset>
-      <div class="checkbox-and-label">
-        <input id="emailNotification"
-               type="checkbox"
-               name="emailNotification"
-               value="true"
-               v-if="showNotification"
-               v-model="emailNotification">
-        <label for="emailNotification"
+        <label for="email"
                v-if="showNotification">{{$t('followupquestions.email_notif')}}</label>
-      </div>
       <input id="email"
              type="email"
              :placeholder="$t('followupquestions.enter_email')"
-             v-if="emailNotification && showNotification"
+             v-if="showNotification"
              v-model="email"
              @keydown.enter.stop.prevent>
       <div class="checkbox-and-label" v-if="showNotification">
@@ -39,8 +31,12 @@
                type="checkbox"
                name="pushNotification"
                value="true"
-               v-model="pushNotification">
-        <label for="pushNotification">{{$t('followupquestions.push_notif')}}</label>
+               v-model="askedPermission"
+               @click="askPermission()"
+               v-if="!askedPermission">
+        <label for="pushNotification"
+               v-if="!askedPermission">{{$t('followupquestions.push_notif')}}</label>
+        <p class="small" v-if="askedPermission">{{permissionResponse}}</P>
       </div>
       <fieldset id="extraInformation">
         <legend>{{$t('followupquestions.more_info')}}</legend>
@@ -79,7 +75,12 @@ export default {
       showNotification: false,
       additionalQuestion: '',
       additionalInformation: '',
-      additionalInfoSent: false
+      additionalInfoSent: false,
+      askedPermission: false,
+      permissionResponse: '',
+      email : '',
+      subscription : '',
+      age : ''
     }
   },
   computed: {
@@ -90,40 +91,23 @@ export default {
         return { 'en': this.additionalQuestion }
       }
     },
-    emailNotification: {
-      get () {
-        return this.$store.state.emailNotification
-      },
-      set (state, payload) {
-        this.$store.commit('updateEmailNotification', state)
-      }
-    },
-    email: {
-      get () {
-        return this.$store.state.email
-      },
-      set (state, payload) {
-        this.$store.commit('updateEmail', state)
-      }
-    },
-    pushNotification: {
-      get () {
-        return this.$store.state.pushNotification
-      },
-      set (state, payload) {
-        this.$store.commit('updatePushNotification', state)
-      }
-    },
-    age: {
-      get () {
-        return this.$store.state.age
-      },
-      set (state, payload) {
-        this.$store.commit('updateAge', state)
-      }
-    }
   },
   methods: {
+    // TODO: ADD i18n support
+    askPermission() {
+      if (!"Notification" in window) {
+        this.permissionResponse = "This browser does not support system notifications, try with your email."
+      }
+      else if (Notification.permission === "granted") {
+        this.$store.dispatch('subscribePushNotification', {'questionId' : this.questionId})
+        this.permissionResponse = "Subscription sent!"
+      } else if (Notification.permission === "default") {
+        Notification.requestPermission()
+        this.askPermission()
+      } else if (Notification.permission === "denied") {
+        this.permissionResponse = "You've previously rejected system notifications.  You'll have to enabled them manually."
+      }
+    },
     showNotificationOptions (choice) {
       this.showNotification = choice
       if (!choice) {
@@ -145,6 +129,13 @@ export default {
           'asker_age': this.age
         })
       }
+      if (email) {
+        this.$store.dispatch('subscribeEmail', {
+          'questionId' : this.questionId,
+          'email' : this.email
+        })
+      }
+
       this.additionalInfoSent = true
       this.$emit('additionalDetails')
     }
