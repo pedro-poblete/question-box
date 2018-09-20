@@ -60,7 +60,12 @@ export default {
     'Tabs': Tabs
   },
   beforeCreate () {
-    this.$i18n.locale = this.$store.state.preferred_locale
+    if ( window.localStorage.getItem('locale') ) {
+      this.$i18n.locale = this.$store.state.locale
+    } else {
+      this.$store.dispatch('setPreferredLocale', 'en')
+    }
+    this.$store.dispatch('fetchQandA')
   },
   created () {
     // THIS IS NOT NECESSARILY WORKING AS INTENDED RIGHT NOW... IF THE NAVBAR IS NOT SHOWN, IT WILL NOT APPEAR WHEN YOU GO TO A DIFFERENT PAGE...
@@ -91,7 +96,7 @@ export default {
   methods: {
     modalManager () {
       if (!this.modalShown) {
-        this.$store.commit('changeModalStatus')
+        this.$store.dispatch('changeModalStatus')
         this.showModal = true
       } else {
         window.location.href = 'https://www.youtube.com'
@@ -108,7 +113,7 @@ export default {
     },
     setLang (lang) {
       this.$i18n.locale = lang
-      this.$store.commit('setPreferredLocale', lang)
+      this.$store.dispatch('setPreferredLocale', lang)
     },
     handleScroll () {
       if (window.scrollY < this.scrollTop) {
