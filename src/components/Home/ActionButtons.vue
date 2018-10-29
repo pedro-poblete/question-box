@@ -78,7 +78,12 @@ export default {
 <style>
 
 .action-buttons {
+  margin-top:48px;
   margin-bottom: 60px;
+}
+
+.action-buttons a {
+  text-decoration: none;
 }
 
 .scale-in-ver-top {

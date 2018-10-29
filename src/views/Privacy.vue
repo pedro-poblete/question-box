@@ -160,19 +160,6 @@ export default {
     }
   }
 
-  .red-button {
-    background-color: #EB361D;
-  }
-
-  .orange-button {
-    background-color: #F67012;
-  }
-
-  .colored-border {
-    border-left: 3px solid #4BC2F9;
-    margin-bottom: 75px !important;
-  }
-
   .expanding-content h2 {
     color: #4BC2F9;
     text-transform: none;

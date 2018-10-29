@@ -5,7 +5,7 @@
       <Tabs v-if="showNavBar"></Tabs>
     </transition>
     <header id="top-bar">
-      <div class="exit-button" :class="{'animateExitButton' : !modalShown, 'pushButtonUp' : !showNavBar }">
+      <div class="exit-button" :class="{'animateExitButton' : !modalShown, 'push-button-up' : !showNavBar }">
         <img src="./assets/Youtube-icon.png" @click="modalManager()" alt="YouTube Button">
       </div>
     </header>
@@ -141,82 +141,54 @@ export default {
     margin-bottom:5px;
   }
 
-  .exit-button {
-    width: 30px;
-    height: 30px;
-    padding: 10px;
-    margin-top: 15px;
-    right: 10px;
-    z-index: 9999;
-    position: fixed;
-    transition: margin 0.5s;
-  }
-
-  .exit-button img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .pushButtonUp {
-    margin-top: -50px;
-  }
-
-  .exit-button::after {
-    content: " ";
-    z-index: -1000;
-    position: fixed;
-    margin-top: -6px;
-    margin-left: -36px;
-    height: 40px;
-    width: 40px;
-    text-align: center;
-    background: white;
-    border-width: 1px;
-    border-color: #eb361d;
-    border-style: solid;
-    border-radius: 100%;
-    font-size: 1.5rem;
-    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.15);
-  }
-
-  .animateExitButton {
-    animation-name: stretch;
-    animation-duration: 0.9s;
-    animation-iteration-count: 6;
-    animation-direction: alternate;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0.5s;
-  }
-
-  @keyframes stretch {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.6);
-  }
-}
+  /* TYPOGRAPHY */
 
   a {
     color: #4BC2F9;
     text-decoration: none;
   }
 
-  .back-to-top {
-    text-align: center;
-    display: block;
-    padding: 56px 20px 40px 20px;
-  }
-
-  .back-to-top p {
-    line-height: 54px;
-    margin: 0;
+  h1 {
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 10px;
-    font-weight: 600;
-    color: #4BC2F9;
+    line-height: 34px;
   }
+
+  h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1em;
+  }
+
+  p {
+    line-height:25px;
+    font-size: 16px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  /* CONTAINER */
+
+  .container {
+    margin: 0 auto;
+    width: 270px;
+  }
+
+  @media screen and (min-width: 450px) {
+    .container {
+      width: 325px;
+    }
+  }
+
+  @media screen and (min-width: 570px) {
+    .container {
+      width: 480px;
+    }
+  }
+
+  /* FOOTER */
 
   footer {
     background-color: #FB8A90;
@@ -271,57 +243,83 @@ export default {
     margin-right:10px;
   }
 
-  .container {
-    margin: 0 auto;
-    width: 270px;
+  /* EXIT BUTTON */
+
+  .exit-button {
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    margin-top: 15px;
+    right: 10px;
+    z-index: 9999;
+    position: fixed;
+    transition: margin 0.5s;
   }
 
-  @media screen and (min-width: 450px) {
-
-    .container {
-      width: 325px;
-    }
-
-}
-
-@media screen and (min-width: 570px) {
-
-  .container {
-    width: 480px;
+  .exit-button img {
+    width: 30px;
+    height: 30px;
   }
 
+  .push-button-up {
+    margin-top: -50px;
+  }
+
+  .exit-button::after {
+    content: " ";
+    z-index: -1000;
+    position: fixed;
+    margin-top: -6px;
+    margin-left: -36px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    background: white;
+    border-width: 1px;
+    border-color: #eb361d;
+    border-style: solid;
+    border-radius: 100%;
+    font-size: 1.5rem;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .animateExitButton {
+    animation-name: stretch;
+    animation-duration: 0.9s;
+    animation-iteration-count: 6;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes stretch {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.6);
+  }
 }
 
-  h1 {
+  /* BACK TO TOP */
+
+  .back-to-top {
+    text-align: center;
+    display: block;
+    padding: 56px 20px 40px 20px;
+  }
+
+  .back-to-top p {
+    line-height: 54px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 10px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 34px;
+    color: #4BC2F9;
   }
 
-  h2 {
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 1em;
-  }
-
-  p {
-    line-height:25px;
-    font-size: 16px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-  }
-
-  /* Home */
-
-  .action-buttons {
-    margin-top:3em;
-  }
-
-  .action-buttons a {
-    text-decoration: none;
-  }
+  /* BUTTONS */
 
   .button {
     background-color: #255F79;
@@ -341,15 +339,9 @@ export default {
   }
 
   @media screen and (min-width: 450px) {
-
     .button {
       width: 350px;
     }
-
-}
-
-  .highlight-button {
-    background-color: #4BC2F9;
   }
 
   .small-button {
@@ -365,10 +357,24 @@ export default {
     width: 170px;
   }
 
-  .small {
-    line-height: 2;
-    font-size: 0.8em;
+  .highlight-button {
+    background-color: #4BC2F9;
   }
+
+  .red-button {
+    background-color: #EB361D;
+  }
+
+  .orange-button {
+    background-color: #F67012;
+  }
+
+  .colored-border {
+    border-left: 3px solid #4BC2F9;
+    margin-bottom: 75px !important;
+  }
+
+  /* GENERAL INPUTS */
 
   input, textarea {
     border-color: #4BC2F9;
@@ -389,5 +395,39 @@ export default {
 
   input::placeholder, textarea::placeholder {
     color: #92DBF9;
+  }
+
+  /* HELPFUL CLASSES */
+
+  .block {
+    display: block;
+  }
+
+  .fullwidth-image {
+    width: 100%;
+    max-width: 560px;
+    margin:auto;
+    display:block;
+  }
+
+  .text-over-image {
+    margin: 0 auto;
+    width: 270px;
+    padding: 15px 15px 15px 25px;
+    top: -50px;
+    position: relative;
+    background-color: #ffffff;
+  }
+
+  @media screen and (min-width: 450px) {
+    .text-over-image {
+      width: 325px;
+    }
+  }
+
+  @media screen and (min-width: 570px) {
+    .text-over-image {
+      width: 480px;
+    }
   }
 </style>

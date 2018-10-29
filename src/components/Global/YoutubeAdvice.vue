@@ -53,19 +53,6 @@ export default {
   align-items: center;
 }
 
-/* .modal-container::after {
-  content: " ";
-  position: fixed;
-  top: 80px;
-  right: 10px;
-  height: 70px;
-  width: 70px;
-  text-align: center;
-  background: white;
-  border-radius: 100%;
-  font-size: 1.5rem;
-} */
-
 .modal-header {
   width: 250px;
   margin-top: 50px;
@@ -98,8 +85,9 @@ export default {
 }
 
 .chevron {
-  padding: 10px;
+  padding: 15px;
 }
+
 .chevron::before {
   border-style: solid;
   border-width: 0.25em 0.25em 0 0;
@@ -113,15 +101,6 @@ export default {
   vertical-align: top;
   width: 1em;
 }
-
-/*
-* The following styles are auto-applied to elements with
-* transition="modal" when their visibility is toggled
-* by Vue.js.
-*
-* You can easily play with the modal transition by editing
-* these styles.
-*/
 
 .modal-enter {
   opacity: 0;

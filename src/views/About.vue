@@ -36,39 +36,6 @@ export default {
   margin-bottom: 30px;
 }
 
-/* TODO: MOVE THIS TO ANOTHER COMPONENT */
-.fullwidth-image {
-  width: 100%;
-  max-width: 560px;
-  margin:auto;
-  display:block;
-}
-
-.text-over-image {
-  margin: 0 auto;
-  width: 270px;
-  padding: 15px 15px 15px 25px;
-  top: -50px;
-  position: relative;
-  background-color: #ffffff;
-}
-
-@media screen and (min-width: 450px) {
-
-  .text-over-image {
-    width: 325px;
-  }
-
-}
-
-@media screen and (min-width: 570px) {
-
-  .text-over-image {
-    width: 480px;
-  }
-
-}
-
 .about-description {
   margin: 0;
   font-size: 20px;

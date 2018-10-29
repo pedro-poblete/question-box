@@ -11,7 +11,7 @@
       <router-link :to="{ name: 'AnswerDetails', params: {id: question.id}, query: {i : index} }">{{question.text}}</router-link>
     </li>
   </ul>
-  <div v-if="questions.length == 0" class="expanding-content">
+  <div v-if="questions.length == 0" class="no-questions container">
     <h2 v-if="searchQuery">{{$t('answers.no_results')}}</h2>
     <h2 v-else>{{$t('answers.empty_state')}}</h2>
   </div>
@@ -70,6 +70,15 @@ export default {
   margin-top: 25px;
   margin-bottom: 25px;
   color: #4BC2F9;
+}
+
+.no-questions h2 {
+  color: #4BC2F9;
+  text-transform: none;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0;
 }
 
 </style>

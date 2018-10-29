@@ -197,8 +197,4 @@ export default {
   color: #7E7F80;
 }
 
-.block {
-  display: block;
-}
-
 </style>

@@ -156,12 +156,12 @@ export default {
   color: #7E7F80;
 }
 
-.answer:last-child {
-  margin-bottom: 0;
-}
-
 .answer {
   margin-bottom: 100px;
+}
+
+.answer:last-child {
+  margin-bottom: 0;
 }
 
 .ambassador-card {
