@@ -1,64 +1,120 @@
 {
   "home": {
-    "title": "Hast du auch eine von &#187;diesen Fragen&#171;?",
-    "description": "<em>Diese Fragen</em> ist eine Frage-Antwort-Plattform, auf der du deine Fragen zu Themen rund um Pubertät, Beziehungen, Sexualität und Sex stellen kannst. Die Antworten kommen von Leuten, die Ähnliches erlebt haben."
+    "title": "Benatna",
+    "subtitle": "zwischen uns",
+    "description": "Benatna ist eine Frage-Antwort-Plattform, auf der du deine Fragen zu Themen rund um Pubertät, Beziehungen, Sex und Identität stellen kannst. Die Antworten kommen von jungen Leuten, die ebenso neu in Deutschland ankamen."
   },
-  "actionbuttons" : {
-    "ask_q" : "Stelle Eine Frage",
+  "actionbuttons": {
+    "ask_q": "Stelle eine Frage",
+    "ask_another": "Stelle eine weitere Frage",
     "see_ans": "Andere Fragen",
-    "meet_vols" : "Die Ambassadors",
-    "addit_det" : "Alle Infos wurden an das System geschickt. Vielen Dank! Wir melden uns so schnell wir möglich bei dir."
+    "meet_vols": "Die Ambassadors",
+    "thank_you": "Danke für deine Frage!",
+    "answer_week": "Wir beantworten deine Frage innerhalb von einer Woche. Bitte gedulde dich! Die Ambassadors geben ihr Bestes."
   },
-  "answerdetails" : {
-    "more" : "Mehr...",
-    "cont_warn" : "Inhaltswarnung",
-    "explicit_content" : "Das folgende Bild/Video beinhaltet detaillierte Sprache oder Themen.",
-    "click_dismiss": "Klicke nur, wenn du dich sicher fühlst, das anzuschauen."
+  "answerdetails": {
+    "question": "Frage",
+    "more": "Mehr...",
+    "less": "Weniger",
+    "previous": "Zurück",
+    "next": "Vor"
+  },
+  "error404": {
+    "error404": "404 Fehler",
+    "title": "Du scheinst neugierig zu sein! Aber hier ist wohl nichts.",
+    "body": "Schau doch mal bei Benatna's {0} vorbei."
   },
   "youtubeadvice": {
-    "yt_title": "YouTube Button",
-    "yt_description": "Falls du Angst hast, dass dir jemand über die Schulter blickt, klicke einfach auf den YouTube Button und such nach deinem Lieblingslied. (Das kann ein bisschen von deinem Datenvolumen aufbrauchen.)"
+    "yt_title": "YouTube",
+    "yt_description": "Falls du Angst hast, dass dir jemand über die Schulter blickt, klicke einfach auf den YouTube Button und such nach deinem Lieblingslied. (Das kann ein bisschen von deinem Datenvolumen aufbrauchen.)",
+    "yt_important": "<strong>Wichtig:</strong> Beim ersten Klicken des YouTube Buttons öffnet sich der Erklärungstext. Sobald du das nächste Mal darauf klickst, wirst du direkt zu YouTube geleitet. Damit YouTube funktioniert, benötigst du Datenvolumen oder WLAN."
   },
   "askquestion": {
     "what_q": "Was ist deine Frage?",
+    "age": "Alter",
+    "optional": "(optional)",
+    "want_notification": "Möchtest du benachrichtigt werden, wenn deine Frage beantwortet wurde?",
+    "mobile_device": "Handy",
+    "disabled_notifications": "Du hast Push-Benachrichtigungen für Benatna deaktiviert. Klicke {0} für weitere Informationen.",
+    "incompatible": "Dein Browser unterstützt keine Push-Benachrichtigungen. Versuche es mit der E-Mail-Benachrichtigung.",
+    "email": "E-Mail",
     "submit": "Abschicken"
   },
-  "followupquestions": {
-    "thanks": "Danke für deine Frage.",
-    "answer_soon": "Wir beantworten diese innerhalb von einer Woche.",
-    "want_notification": "Willst du dann eine Benachrichtigung erhalten?",
-    "yes": "Ja",
-    "no": "Nein",
-    "email_notif": "Ich möchte eine E-Mail-Benachrichtigung erhalten.",
-    "enter_email": "Bitte gib deine E-Mail-Addresse ein",
-    "push_notif": "Ich möchte eine Benachrichtigung auf mein Handy erhalten. ",
-    "more_info": "Mehr Informationen zu deiner Frage helfen dabei, eine bessere Antwort zu verfassen. Doch ist dies nicht verpflichtend.",
-    "age": "Wie alt bist du?",
-    "additional_details": "Gibt es etwas, das du noch hinzufügen möchtest?",
-    "extra_question": "Falls du noch weitere Fragen hast, kannst du sie hier stellen. Wir antworten innerhalb von einer Woche.",
-    "done": "Fertig",
-    "privacy_reminder": "Unter {0} kannst du die Einstellungen zu deinen Benachrichtigungen immer ändern."
-  },
   "answers": {
-    "title": "Antworten auf &#187;Diese Fragen&#171;.",
+    "title": "Antworten",
     "explanation": "Viele Jugendliche haben ähnliche Fragen wie du. Hier kannst du sehen, welche Fragen von anderen Jugendlichen gestellt und von den Ambassadors beantwortet wurden.",
-    "explain_nsfw": "Manche Antworten enthalten auch Videos oder Bilder. Diese Inhalte können eventuell unangenehm für dich sein. Du selbst entscheidest, ob es sich für dich okay anfühlt, diese Inhalte zu sehen. Solche Videos/Bilder enthalten eine Inhaltswarnung. Durch Klicken auf das Video/Bild schaltest du die Warnung aus. Über die {0} kannst du die gesamte Funktion ausschalten.",
+    "different_languages": "Manche Fragen sind auf Deutsch und Englisch verfügbar, manche aber nur auf einer Sprache. Weiter unten kannst du die Sprache wechseln, dann aktualisieren sich die Fragen automatisch.",
     "search": "Suche",
-    "no_results": "Deine Suche ergab keinen Treffer. Versuche es mit einem anderen Suchbegriff."
+    "no_results": "Die Suche ergab keine Treffer. Bitte such nach einem anderen Begriff.",
+    "empty_state": "Es gab ein Problem die Antworten darzustellen. Bitte versuche es noch einmal, wenn du eine Internet-Verbindung hast. "
   },
   "app": {
-    "privacy": "Privatsphäre",
-    "about": "Über <em>Diese Fragen</em>"
+    "privacy": "Datenschutz",
+    "about": "Über Benatna",
+    "app_name": "Benatna",
+    "home": "Home",
+    "ask": "Fragen",
+    "answers": "Antworten",
+    "ambassadors": "Ambassadors"
   },
   "about": {
-    "title": "Über <em>Diese Fragen</em>",
-    "description": "Während der Pubertät hat man viele Fragen zum eigenen Körper, zu Gefühlen oder Beziehungen. &#187; Diese Fragen &#171; ist eine peer-basierte Plattform, auf der alle Jugendliche aus verschiedenen Ländern und Kulturen ihre Fragen rund um Pubertät, Beziehung, Sexualität und Sex stellen können. Beantwortet werden diese Fragen von jungen Menschen die ebenfalls aus verschiedenen Kulturen kommen. Sie haben oft ähnliche Erfahrungen gemacht als die nach Deutschland kamen und mussten sich in Deutschland einfinden",
-    "about_project": "Das Projekt wird von einem jungen, internationalen Team geleitet (Deutschland, Chile, Indien, Niederlande). Alle Teammitglieder arbeiten seit Langem in der kulturell sensiblen Sexualaufklärung."
+    "title": "Über Benatna",
+    "description": "Während der Pubertät hat man viele Fragen zum eigenen Körper, zu Gefühlen oder Beziehungen. {0} ist eine peer-basierte Plattform, auf der alle Jugendlichen aus verschiedenen Ländern und Kulturen ihre Fragen rund um Pubertät, Beziehung, Sex und Identität stellen können. Beantwortet werden diese Fragen von {1} kommen (Ambassadors) und oft ähnliche Erfahrungen gemacht haben, als sie nach Deutschland kamen. Sie sind bereit, von ihren Erfahrungen rund um's Erwachsenwerden zu erzählen! ",
+    "young_people": "jungen Leute, die ebenfalls aus unterschiedlichen Kulturen",
+    "team_title": "Das Team",
+    "about_project": "Benatna wird von einem jungen, internationalen Team geleitet (Deutschland, Chile, Indien, Niederlande). Alle Teammitglieder arbeiten seit Langem in der kulturell sensiblen Sexualaufklärung. Das Projekt wird vom {0} gefördert und vom {1} betreut.",
+    "ministry": "BMBF",
+    "prototype_fund": "Prototype Fund"
   },
   "ambassadors": {
     "title": "Die Ambassadors",
-    "description": "Die Ambassadors sind ehrenamtliche, junge Leute, die deine Fragen beantworten. Dafür berufen sie sich nicht nur auf Fakten, sondern erzählen auch von sich und ihren eigenen Erfahrungen. Alle haben sich während ihrer Pubertät jemanden gewünscht, dem/der sie alle Fragen hätten stellen können. Diese/r Jemand wollen sie nun für dich sein!",
-    "nick": "Nickhil",
-    "nick_bio": "Jeder Mensch hat das Recht auf angemessene Sexualerziehung. Ich bin in Indien aufgewachsen und meine Pubertät war voll von Mythen rund um Sex-Themen. Ich möchte, dass Jugendliche die richtigen Informationen zu ihren Fragen bekommen. Vor zwei Jahren kam ich nach Schweden brauchte eine ganze Weile, um die Zeichen der neuen Kultur zu lesen und meinen Platz hier zu finden."
+    "description": "Die Ambassadors sind ehrenamtliche, junge Leute, die deine Fragen beantworten. Dafür berufen sie sich nicht nur auf Fakten, sondern erzählen auch von sich und ihren eigenen Erfahrungen. Alle haben sich während ihrer Pubertät jemanden gewünscht, dem/der sie alle Fragen hätten stellen können. Diese/r Jemand wollen sie nun für dich sein! Sie wurden vom Benatna-Team ausgewählt und auf die Arbeit als Ambassadors vorbereitet.",
+    "picture_alt": "Foto von ",
+    "cta": "Auch du möchtest als Ambassador für Sexualaufklärung Fragen beantworten und junge Leute auf ihrem Weg des Erwachsenwerdens begleiten oder Benatna auf andere Weise unterstützen?\nSende eine E-Mail an {0}. Wir melden uns und erklären dir alles weitere.",
+    "join_us": "Join us!"
+  },
+  "privacy": {
+    "title": "Datenschutz",
+    "subheader": "Die Verantwortung deiner Daten liegt bei dir.",
+    "intro1": "Hier erklären wir dir alles, was du über Datenschutz wissen solltest, um diese Webseite sicher zu nutzen. ",
+    "intro2": "Außerdem kannst du hier nachlesen, welche Eigenschaften diese Webseite hat, um die Nutzung optimal zu gestalten. Du kannst deine persönlichen Einstellungsänderungen vornehmen.",
+    "intro3": "Bei Fragen und Problemen schicke einfach eine E-Mail an: {0}.",
+    "contact_email": "contact@benatna.de",
+    "local_storage": "Local Storage",
+    "ls_description1": "Die Idee der Webseite ist, dass möglichst wenig deines Datenvolumens beim Browsen benötigt wird. Außerdem kannst du die Webseite offline nutzen. Dafür haben wir <em>Service Worker</em> eingebaut, eine Technologie, die dir genau das erlaubt.",
+    "ls_description2": "Hier kannst du den Local Storage löschen und den Service Worker abmelden. Beim nächsten Besuch auf der Webseite musst du dies erneut tun.",
+    "delete_ls": "Storage löschen",
+    "delete_ls_check": "Bestätigen?",
+    "delete_ls_ok": "Storage gelöscht",
+    "storage_deleted": "Der Storage ist gelöscht und der Service Worker abgemeldet. Wahrscheinlich musst du noch deinen Browser-Verlauf löschen.",
+    "incognito_title": "Privates Surfen",
+    "incognito_intro": "Bei allen Browsern kann man auch <em>privat surfen</em>. Durch privates Surfen wird sichergestellt, dass keine Informationen darüber, welche Webseiten du besuchst, gespeichert werden.",
+    "incognito_instructions": "Privates Surfen fuktioniert in jedem Browser unterschiedlich. Hier sind ein paar Links zu den Einstellungserklärungen:",
+    "edge": "Microsoft Edge",
+    "edge_name": "InPrivate-Browsen",
+    "safari": "Safari",
+    "safari_name": "Privates Surfen",
+    "opera": "Opera",
+    "opera_name": "Privates Fenster",
+    "firefox": "Firefox",
+    "firefox_name": "Privates Fenster",
+    "chrome": "Chrome",
+    "chrome_name": "Inkognito Modus",
+    "incognito_warning": "<strong>Wichtig:</strong> Privates Surfen verhindert nicht, dass dein Internetanbieter oder die Person, die dein WLAN verwaltet sehen kann, welche Webseiten du besuchst. Benatna speichert davon nichts, hier bist du sicher.",
+    "data_storage": "Datenspeicherung",
+    "ds_intro": "Nur die Daten die du aktiv an unseren Server schickst (deine Fragen) werden gespeichert, ansonsten speichern wir keine deiner Daten.",
+    "ds_body1": "Alle Infos sind auf deinem Handy gespeichert und werden nur an uns übersendet, wenn du auf \"Abschicken\" klickst.",
+    "ds_body2": "Wenn du eine Frage an uns sendest, werden keine extra Daten erhoben. Mit anderen Worten: Wir speichern nur, was du aktiv an uns sendest: Deine Frage(n) und dein Alter (sofern du es angibst). Diese Information wird in unserer Datenbank gespeichert. Nur das Benatna-Team und die Ambassadors haben darauf Zugriff.",
+    "notifications_title": "Benachrichtigungen",
+    "notifications_intro": "Du hast zwei optionale Möglichkeiten, per Benachrichtigung informiert zu werden, sobald deine Frage von den Ambassadors beantwortet wurde: per Push-Benachrichtigung oder per E-Mail.",
+    "notifications_email": "Falls du eine Benachrichtigung per E-Mail erhalten möchtest, wird deine E-Mail-Adresse zusammen mit deiner Frage gespeichert, bis diese beantwortet ist. Doch keine Angst, die Ambassadors haben keinen Zugriff auf deine E-Mail. Sie wird verschlüsselt und kann nicht entschlüsselt werden, selbst wenn sich jemand Zugang zur Datenbank verschafft. Sobald die Benachrichtigung verschickt ist, wird deine E-Mail-Adresse von unserem Server gelöscht. ",
+    "notifications_push": "Für Push-Benachrichtigungen entwickelt dein Handy ein Token, das an unseren Server gesendet wird. Sobald deine Frage beantwortet wurde, bekommst du eine Benachrichtigung auf deinem Handy. Wir speichern dabei keine deiner Daten ab. Es ist für uns unmöglich, deine Nummer, deinen Standort oder jegliche andere persönlichen Infos zu verfolgen.",
+    "notifications_push_warning": "<strong>Wichtig:</strong> Nicht alle Browser ermöglichen Push-Benachrichtigungen. Safari, Microsoft Edge und Opera entwickeln diese gerade erst. Falls du keine Push Notifications erhalten kannst, ist dies womöglich der Grund.",
+    "notifications_outro": "Um deinen Datenschutz zu gewähren, wirst du jedes Mal gefragt, auf welchem Weg du eine Benachrichtigung erhalten möchtest (sofern du überhaupt eine erhalten willst).",
+    "enable_push_title": "Einstellungen der Benachrichtigungen ändern",
+    "enable_push_intro": "Sofern du die Push-Benachrichtigungen dieser Webseite deaktiviert hast, kannst du diese nur aktiv über deinen Brower wieder reaktivieren. Wir können dich nur einmal fragen, ob du Push-Benachrichtigungen dieser Webseite erlaubst oder nicht.",
+    "enable_push_body": "Das Aktivieren von Push-Benachrichtigungen ist bei jedem Browser unterschiedlich:",
+    "chrome_web_preferences": "Chrome",
+    "firefox_web_preferences": "Firefox"
   }
 }

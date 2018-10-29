@@ -35,7 +35,7 @@ export default {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background: #00A9F8;
+  background: #4BC2F9;
   box-shadow: 0px 2px 16px 3px rgba(0, 0, 0, 0.20);
   height:55px;
   flex-direction: row;

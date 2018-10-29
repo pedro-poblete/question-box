@@ -1,9 +1,9 @@
 <template>
   <div class="action-buttons">
-
     <transition name="fade">
-      <div class='sentNotification container' v-if="asking === 'done' ">
-        <h2>{{$t('actionbuttons.addit_det')}}</h2>
+      <div class='sent-notification container' v-if="asking === 'done' ">
+        <h2>{{$t('actionbuttons.thank_you')}}</h2>
+        <p>{{$t('actionbuttons.answer_week')}}</p>
       </div>
     </transition>
 
@@ -18,7 +18,7 @@
         v-if="asking === 'no' || asking === 'asking' ">{{$t('actionbuttons.ask_q')}}</button>
 
     <transition name="appearDown">
-      <AskQuestion v-if="asking === 'asking'" @allSent="asking = 'done' "/>
+      <AskQuestion v-if="asking === 'asking'" @sent="asking = 'done' "/>
     </transition>
 
     <button
@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     changeView (navigationPath) {
-      this.$router.push({path: navigationPath})
+      this.$router.push({ path: navigationPath })
     },
     changeAsking () {
       if (this.asking === 'asking') {
@@ -59,10 +59,10 @@ export default {
       }
     },
     checkRoute () {
-      if (this.$route.name == 'home') {
+      if (this.$route.name === 'home') {
         this.asking = 'no'
       }
-      if (this.$route.name == 'ask') {
+      if (this.$route.name === 'ask') {
         this.asking = 'asking'
       }
     }
@@ -120,9 +120,22 @@ export default {
   opacity: 0;
 }
 
-.sentNotification {
-  margin-top: 30px;
-  margin-bottom: 30px;
+.sent-notification {
+  margin-top: 80px;
+  margin-bottom: 50px;
+  max-width: 350px;
+}
+
+.sent-notification h2 {
+  font-size: 24px;
+  line-height: 34px;
+  text-transform: none;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.sent-notification p {
+  margin-top: 15px;
 }
 
 </style>

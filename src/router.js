@@ -5,12 +5,16 @@ import Answers from './views/Answers.vue'
 import Ambassadors from './views/Ambassadors.vue'
 import About from './views/About.vue'
 import Privacy from './views/Privacy.vue'
+import AnswerDetails from './views/AnswerDetails.vue'
+import Error404 from './views/Error404.vue'
 
 Vue.use(Router)
 
 export default new Router({
   scrollBehavior (to, from, savedPosition) {
-    if (savedPosition) {
+    if (to.hash) {
+      return { selector: to.hash }
+    } else if (savedPosition) {
       return savedPosition
     } else {
       return { x: 0, y: 0 }
@@ -34,6 +38,11 @@ export default new Router({
       component: Answers
     },
     {
+      path: '/answers/:id',
+      name: 'AnswerDetails',
+      component: AnswerDetails
+    },
+    {
       path: '/ambassadors',
       name: 'ambassadors',
       component: Ambassadors
@@ -47,6 +56,15 @@ export default new Router({
       path: '/privacy',
       name: 'privacy',
       component: Privacy
+    },
+    {
+      path: '/404',
+      name: 'Error404',
+      component: Error404
+    },
+    {
+      path: '*',
+      redirect: '/404'
     }
   ]
 })

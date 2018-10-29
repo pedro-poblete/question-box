@@ -3,33 +3,29 @@
   <div class="container">
     <h1 v-html="$t('answers.title')"></h1>
     <p>{{$t('answers.explanation')}}</p>
-    <i18n path="answers.explain_nsfw" tag="p">
-      <router-link :to="{ name: 'privacy'}">{{$t('app.privacy')}}</router-link>
-    </i18n>
+    <p>{{$t('answers.different_languages')}}</p>
     <input id="searchAnswer" type="text" :placeholder="$t('answers.search')" v-model='searchQuery'>
   </div>
-  <article class="question-list">
-    <div v-for="question in questions" :key="question.id">
-      <AnswerDetails :question="question" />
-    </div>
-    <div v-if="questions.length == 0" class="expanding-content">
-      <h2>{{$t('answers.no_results')}}</h2>
-    </div>
-  </article>
+  <ul class="question-list container">
+    <li v-for="(question, index) in questions" :key="question.id">
+      <router-link :to="{ name: 'AnswerDetails', params: {id: question.id}, query: {i : index} }">{{question.text}}</router-link>
+    </li>
+  </ul>
+  <div v-if="questions.length == 0" class="expanding-content">
+    <h2 v-if="searchQuery">{{$t('answers.no_results')}}</h2>
+    <h2 v-else>{{$t('answers.empty_state')}}</h2>
+  </div>
+
 </section>
 </template>
 
 <script>
-import AnswerDetails from '../components/Answers/AnswerDetails.vue'
 
 export default {
   beforeCreate () {
     this.$store.dispatch('fetchQandA')
   },
   name: 'Answers',
-  components: {
-    'AnswerDetails': AnswerDetails
-  },
   data () {
     return {
       searchQuery: ''
@@ -53,14 +49,6 @@ export default {
         }
         return allKeywords
       })
-    },
-    showNSFW () {
-      return this.$store.state.showNSFW
-    },
-    filteredList () {
-      return this.questions.filter(question =>
-        JSON.stringify(question).toLowerCase().includes(this.searchQuery.toLowerCase())
-      )
     }
   }
 }
@@ -75,4 +63,13 @@ export default {
 .question-list {
   margin-top: 50px;
 }
+
+.question-list li {
+  font-size: 24px;
+  line-height: 33px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: #4BC2F9;
+}
+
 </style>

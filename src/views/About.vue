@@ -4,7 +4,7 @@
       <h1 v-html="$t('about.title')"></h1>
     </div>
     <div>
-      <img src="../assets/about_project.jpg" class="fullwidth-image" alt="Team Picture">
+      <img src="../assets/about_project.jpg" class="fullwidth-image" alt="Picture of Young People">
     </div>
     <div class="text-over-image">
       <i18n path="about.description" tag="p" class="about-description">
@@ -14,7 +14,10 @@
     </div>
     <div class="container about-team">
       <h2>{{$t('about.team_title')}}</h2>
-      <div v-html="$t('about.about_project')"></div>
+      <i18n path="about.about_project" tag="p">
+        <a href="https://www.bmbf.de/">{{$t('about.ministry')}}</a>
+        <a href="https://prototypefund.de/">{{$t('about.prototype_fund')}}</a>
+      </i18n>
     </div>
     <img src="../assets/qb-team.jpg" class="fullwidth-image" alt="Team Picture">
   </section>
@@ -36,6 +39,7 @@ export default {
 /* TODO: MOVE THIS TO ANOTHER COMPONENT */
 .fullwidth-image {
   width: 100%;
+  max-width: 560px;
   margin:auto;
   display:block;
 }

@@ -1,94 +1,120 @@
 {
-  "home" : {
-    "title": "Do you also have one of “those questions”?",
-    "description": "<em>Those Questions</em> is a Q&A-platform to provide you with answers to your questions about growing up, identity, relationships, and sex from people you can relate to."
-  },
-  "actionbuttons" : {
-    "ask_q" : "Ask A Question",
-    "ask_another" : "Ask Another Question",
-    "see_ans": "See Other Answers",
-    "meet_vols" : "Meet The Ambassadors",
-    "addit_det" : "Thank you! We will get to your question as soon as possible."
-  },
-  "answerdetails" : {
-    "more" : "More...",
-    "cont_warn" : "Content Warning",
-    "explicit_content" : "The following content may include explicit language and/or deal with explicit topics.",
-    "click_dismiss": "Only click to dismiss this warning if you feel comfortable to watch it."
-  },
-  "youtubeadvice": {
-    "yt_title": "YouTube button",
-    "yt_description": "If you're afraid someone is looking over your shoulder, just press the YouTube button and search for your favourite song."
-  },
-  "askquestion": {
-    "what_q": "What is your question?",
-    "submit": "Submit"
-  },
-  "followupquestions": {
-    "thanks": "Thank you for your question.",
-    "answer_soon": "We will answer your question within a week.",
-    "want_notification": "Do you want a notification when your question is answered?",
-    "yes": "Yes",
-    "no": "No",
-    "email_notif": "I want to receive an email notification.",
-    "enter_email": "Please enter your email",
-    "push_notif": "I want to receive a notification in my phone.",
-    "more_info": "We would like to ask you some more information to answer your question better. However, this is not required.",
-    "age": "How old are you?",
-    "additional_details": "Is there anything else you'll like to share with us or that you want to add?",
-    "extra_question": "Do you have any other questions?",
-    "done": "Done",
-    "privacy_reminder": "You can always visit the {0} page to change your notification settings."
-  },
-  "answers": {
-    "title": "Answers",
-    "explanation": "Many adolescents have similar questions like you. Here you can read submitted questions by others and the answers already given by our ambassadors",
-    "explain_nsfw": "Some answers contain videos or pictures, and some of these could make you feel uncomfortable. We want you to decide for yourself and only watch those things when you are sure that you feel okay with it. We have marked any explicit content with a warning. You may dismiss that warning at any moment and/or completely disable it from your {0} section",
-    "search": "search",
-    "no_results": "There are no results available for your search. Please try searching for a different term."
-  },
-  "app": {
-    "privacy": "Privacy",
-    "about": "About",
-    "app_name": "Those Questions",
-    "home": "Home",
-    "ask": "Ask",
-    "answers": "Answers",
-    "ambassadors": "Ambassadors"
-  },
-  "about": {
-    "title": "About",
-    "description": "Puberty often comes with questions about one’s own body, feelings or relationships. {0} is a platform where teenagers from all countries and cultures can submit questions about puberty, relationships, sexuality and sex. The questions are then answered by {1} who have often had similar experiences when they had to settle in Germany.",
-    "young_people": "young people from different cultures",
-    "description_old": "During puberty, one has many questions about one's own body, feelings or relationships. <em>Those Questions</em> is a peer-based platform where all teenagers from different countries and cultures can ask their questions about puberty, relationships, sexuality and sex. These questions are answered by young people who also come from different cultures. They often had similar experiences when they came to Germany and had to settle in Germany.",
-    "team_title": "The Team",
-    "about_project_old": "The project is led by a young international team (Germany, Chile, India, Netherlands). All team members have been working for a long time in culturally sensitive sex education.",
-    "about_project": "<p>The project is led by a young international team who have all been working in culturally sensitive education for a long time and includes people coming from Germany, Chile, India, and Belgium.</p> <p>Funding comes from the <a href='https://prototypefund.de' target='_blank'>Prototype Fund</a>, which connects iterative software development to government funding.</p>"
-  },
-  "ambassadors": {
-    "title": "Ambassadors",
-    "description": "The ambassadors are committed, young people who want to provide answers and perspectives to your questions.",
-    "nick": "Nickhil",
-    "nick_info": "India / Sweden",
-    "nick_bio": "I believe everyone has the right to adequate sex-education. Growing up in India, my puberty was full of myths around sex. I want teenagers to get better information than what I got, to support them with their concerns. Two years ago, I moved to Sweden. It took me a while to get used to the new cultural signals and find my own place in the country. By now, I feel at home here and look forward to the coming years to come.",
-    "zain": "Zain",
-    "zain_info": "Syria / Germany",
-    "zain_bio": "Access to information about health, hygiene and sex is needed to make informed decisions – independently of age and no matter where one comes from. I think sex-education is something you will truly be using for the rest of your life as it plays a role in forming one’s own confidence, self-worth and identy. I am eager to support this journey!",
-    "cta": "Do you think you will like to be an ambassador and help other young people in the adventure of growing up? Please send us an email at <a href='mailto:contact@thosequestions.de'>contact@thosequestions.de</a> and we'll get in touch with you to see how can you support the project.",
-    "join_us": "Join Us!"
-  },
-  "privacy": {
-    "title": "Privacy",
-    "subheader": "You are in control of your personal data.",
-    "description": "<p>We ask you to opt-in before we use any of your personal data for this website. If you do not opt-in, we will not collect, store, or use any personal data in our server.</p> <p>We differentiate between two types of data: the things you send to our server, and the things that are kept in your local storage and are not processed by us, but remain in your own device.</p> <p>If you have any questions or problems, you can always reach to us in <a href='mailto:contact@thosequestions.de'>contact@thosequestions.de</a>.</p>",
-    "incognito_title": "Use this website secretly",
-    "incognito_instructions": "<p>If you want to browse this site (and the web) without your browser remembering your activity, you can do so by accessing the Incognito or Private mode.</p> <b>TODO: ADD MORE OF THIS</b>",
-    "notifications_title": "Notifications",
-    "notifications_explanation": "<p>Whenever you send a question and/or any additional details, that information is stored in our servers. If you include your email address for notifications, it will be stored and kept link with your question so we can send you a notification. This processing is, however, done automatically, and none of our Ambassadors or the rest of the team is able to see your email.</p> <p>When you subscribe to receive a phone notification, a subscription event is generated in our server and in your device, so whenever the question is answered, your device will automatically let you know. We do not keep any personal data about your phone other than the subscription event. It is impossible for us to track down your location, phone number, or any other personal data.</p>",
-    "notifications_email": "I want to receive an email notification whenever the questions I ask are answered.",
-    "notifications_push": "I want to receive a notification in my device whenever the questions I ask are answered.",
-    "offline_data_title": "Offline Storage",
-    "offline_data_explanation": "<p>Most information is actually stored and processed locally in your own device, without us having access to it unless you share it by sending a question. We keep track locally of your preferences about explicit content, language, and notifications.</p> <p>A local copy of the website is stored in your device so you can use it while being offline. This local copy allows you to read any answered question while being offline, but it won't save any associated media (i.e. YouTube videos and/or images) in your phone.</p> <p>If, for whatever reason, you want to delete this, you can do so here. Any information won't be re-downloaded until you navigate and/or decide to share it again.</p>",
-    "delete_button": "Delete local information"
-  }
+	"home": {
+		"title": "Benatna",
+    "subtitle": "between us",
+		"description": "Benatna is a platform where young people who came to Germany answer your questions about puberty, relationships, sex & identity."
+	},
+	"actionbuttons": {
+		"ask_q": "Ask a question",
+		"ask_another": "Ask another question",
+		"see_ans": "See other answers",
+		"meet_vols": "Meet the ambassadors",
+		"thank_you": "Thank you for your question!",
+		"answer_week": "We try to answer all questions within a week. Please be patient! The ambassadors give their best."
+	},
+	"answerdetails": {
+		"question": "Question",
+		"more": "More...",
+		"less": "Less",
+		"previous": "Previous",
+		"next": "Next"
+	},
+	"error404": {
+		"error404": "404 Error",
+		"title": "I like how curious you are, but it looks like there's nothing here.",
+		"body": "What if you try again here: {0}"
+	},
+	"youtubeadvice": {
+		"yt_title": "YouTube button",
+		"yt_description": "If you're afraid someone is looking over your shoulder, just press the YouTube button and search for your favourite song. (This may take a bit of your data.)",
+		"yt_important": "<strong>Important:</strong> The first time you click the YouTube button, a notification will appear, but subsequent times you'll be taken directly to YouTube. Using YouTube in this kind of way will not prevent you from using your data, nor it will work offline."
+	},
+	"askquestion": {
+		"what_q": "What is your question?",
+		"age": "Age",
+		"optional": "(optional)",
+		"want_notification": "Would you like to receive a notification when the answer is ready?",
+		"mobile_device": "Mobile Device",
+		"disabled_notifications": "You have disabled web notifications for Benatna. Visit {0} for more information.",
+		"incompatible": "Your browser does not allow for web notifications. Try using email.",
+		"email": "Email",
+		"submit": "Submit"
+	},
+	"answers": {
+		"title": "Answers",
+		"explanation": "Many adolescents have similar questions like you. Here you can read submitted questions by others and the answers already given by our ambassadors.",
+		"different_languages": "Some questions are available in both German and English, but some are only available in one language. You can change your preferred language at the bottom and the list of answered questions will be automatically updated.",
+		"search": "search",
+		"no_results": "There are no results available for your search. Please try searching for a different term.",
+		"empty_state": "There was a problem accessing the answers. Please try again when you have connection to the internet."
+	},
+	"app": {
+		"privacy": "Privacy",
+		"about": "About Benatna",
+		"app_name": "Benatna",
+		"home": "Home",
+		"ask": "Ask",
+		"answers": "Answers",
+		"ambassadors": "Ambassadors"
+	},
+	"about": {
+		"title": "About Benatna",
+		"description": "Puberty often comes with questions about one’s own body, feelings or relationships. {0} is a platform where teenagers from all countries and cultures can submit questions about puberty, relationships, sexuality and sex. The questions are then answered by {1} (ambassadors) who have often had similar experiences when they had to settle in Germany. They are open to share their experience about growing-up!",
+		"young_people": "young people from different cultures",
+		"team_title": "The Team",
+		"about_project": "Benatna is led by a young international team who have all been working in culturally sensitive education for a long time and includes people coming from Germany, Chile, India, and Belgium. The project is funded by the {0} and supervised by the {1}.",
+    "ministry": "Federal Ministry of Education and Research",
+    "prototype_fund": "Prototype Fund"
+	},
+	"ambassadors": {
+		"title": "Ambassadors",
+		"description": "The ambassadors are committed, young people who want to provide answers and perspectives to your questions. During their puberty, they all wanted to have someone whom to ask all personal questions abou growing-up. They want to be this someone for you now! The ambassadors are chosen by the Benatna-Team and sensitized for their work.",
+    "picture_alt": "Picture of ",
+		"cta": "You would also like to answer questions as an ambassador for sex-education and support young people in the adventure of growing up? Or you want to support the project in any other way? Please send an e-mail to {0} and we’ll get in touch with you.",
+		"join_us": "Join Us!"
+	},
+	"privacy": {
+		"title": "Privacy",
+		"subheader": "You are in control of your personal data.",
+		"intro1": "In this section we will provide you with all the information you need to know about privacy and data security for using the website safely.",
+		"intro2": "Here you can also read about the features of this website and how to make the experience best suited for your purpose. You'll be able to change the settings and features according to your needs.",
+		"intro3": "If you have any further questions or problems, please do not hesitate to contact us: {0}.",
+		"contact_email": "contact@benatna.de",
+		"local_storage": "Local Storage",
+		"ls_description1": "In order to provide you with a better experience, we implemented a technology called <em>service worker</em>, which creates a local copy of the website on your phone for using it offline. This technology not only allows you to browse the questions while being offline, but also reduces the amount of data the website consumes.",
+		"ls_description2": "If you want to delete your local storage and unregister the service worker, you can do it here. This information won't be re-downloaded until you navigate to the website again.",
+		"delete_ls": "Delete Storage",
+    "delete_ls_check": "Confirm?",
+    "delete_ls_ok": "Storage Deleted",
+    "storage_deleted": "Storage deleted and Service Worker de-registered. Please note that you may need to clear your browser history as well.",
+		"incognito_title": "How to use your browser privately",
+		"incognito_intro": "All modern browsers have a feature called <em>Private Browsing</em>, which allows you to browse the Internet without saving any information about which sites and pages you’ve visited. ",
+		"incognito_instructions": "Activating <em>Private Browsing</em> is different for every browser, so we have selected a series of resources that can help you achieve this: ",
+		"edge": "Microsoft Edge",
+		"edge_name": "InPrivate Window.",
+		"safari": "Safari",
+		"safari_name": "Private Browsing.",
+		"opera": "Opera",
+		"opera_name": "Private Window.",
+		"firefox": "Firefox",
+		"firefox_name": "Private Window.",
+		"chrome": "Chrome",
+		"chrome_name": "Incognito Mode.",
+		"incognito_warning": "<strong>Important:</strong> Private browsing will not prevent your Internet Service Provider, the person who manages your Wi-Fi, or some other sites to track what pages you visit. Benatna doesn't track anything; here you are safe.",
+		"data_storage": "Data Storage",
+		"ds_intro": "We <strong>do not</strong> store any data that you don't actively send (i.e. questions) to our servers. That means we are not tracking you at all.",
+		"ds_body1": "All information is stored locally in your device, and only communicated with us when you actively click the \"submit\" buttons, not before that.",
+		"ds_body2": "When you submit a question no meta-data is collected. In other words, we only save what you have actively included: your question(s), and, if you chose, your age. This information is then stored in a database and can only be seen by the website administrators and ambassadors.",
+		"notifications_title": "Notifications",
+		"notifications_intro": "Whenever you ask a question, we offer you the possibility to receive a notification once our ambassadors have given you an answer. There are two ways you can choose to receive an answer: via email or via phone notification.",
+		"notifications_email": "If you choose to receive a notification via email, we will keep a copy of your email associated to the question until the question is answered. Your email is not available for any ambassador, and it is encrypted in such a way that, even if someone gets access to the database, it won't be possible for them to crack it. Once the notification is sent, we will delete your email from our servers.",
+		"notifications_push": "When you subscribe to receive a phone notification, a token is generated on your device and sent to our server. Whenever the question is answered, your device will automatically let you know. We do not keep any personal data about your phone. It is impossible for us to track down your location, phone number, or any other personal information.",
+		"notifications_push_warning": "<strong>Important:</strong> Not all browsers currently support Push Notifications. Chrome and Firefox have implemented them, and Safari, Edge and Opera are still in the process. If you have problems receiving Push Notifications, this is probably the reason.",
+		"notifications_outro": "In order to respect your privacy, you will have the choice to select each time what notification option you prefer, if any.",
+		"enable_push_title": "Changing your Site Preferences",
+		"enable_push_intro": "If you disabled Push Notifications for this website, it is possible to change it directly from your browser. We are only allowed to ask you to receive Push notifications once.",
+		"enable_push_body": "Activating Push Notifications is different for every browser, so we have selected a series of resources that can help you achieve this: ",
+		"chrome_web_preferences": "Chrome Web Preferences.",
+		"firefox_web_preferences": "Firefox Web Push Notifications."
+	}
 }
