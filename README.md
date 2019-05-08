@@ -1,21 +1,3 @@
-# question-box
+# Benatna's Question Box front-end.
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
+## This project is kept for documentation purposes only. If you are interested in the project and/or want to see an updated version, please visit [Benatna's GitHub](https://github.com/Benatna/question-box-frontend).
